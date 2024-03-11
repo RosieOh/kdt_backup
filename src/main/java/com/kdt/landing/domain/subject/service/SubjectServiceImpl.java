@@ -40,7 +40,7 @@ public class SubjectServiceImpl implements SubjectService {
     @Override
     public SubjectDTO findById(Long no) throws Exception {
         Optional<Subject> subFullStack = subFullStackRepository.findById(no);
-
+        // passencoder 다시 뺴줘야함
         SubjectDTO subFullStackDTO = modelMapper.map(subFullStack, SubjectDTO.class);
         return subFullStackDTO;
     }

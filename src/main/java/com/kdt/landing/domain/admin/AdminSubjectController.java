@@ -15,7 +15,7 @@ import java.util.List;
 
 @Log4j2
 @Controller
-@RequestMapping("/adminSubject")
+@RequestMapping("/admin_subject")
 @RequiredArgsConstructor
 public class AdminSubjectController {
 
@@ -38,6 +38,7 @@ public class AdminSubjectController {
     }
 
     @GetMapping("/read")
+    @ResponseBody
     public String readAdminSub(Long no, Model model) throws Exception {
         SubjectDTO subjectDTO = subFullStackService.findById(no);
         model.addAttribute("adminSubDTOList", subjectDTO);

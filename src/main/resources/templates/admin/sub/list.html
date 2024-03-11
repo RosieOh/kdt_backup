@@ -36,12 +36,9 @@
             padding: 0.75em 0.75em;
         }
 
-        .item1 { width:6%; }
-        .item2 { width:20%; }
-        .item3 { width:20%; }
-        .item4 { width:20%; }
-        .item5 { width:15%; }
-        .item6 { width:20%; }
+        .item1, .item2, .item3, .item4, .item5, .item6 {
+            width: 20%; /* 모든 열의 너비를 동일하게 설정 */
+        }
     </style>
 
 </head>
@@ -64,7 +61,7 @@
     </form>
 </div>
 
-<div class="row mt-3" style="width: 75%; margin: 0 auto; padding-top: 100px; min-height: 70vh;" >
+<div class="row mt-3" style="width: 70%; margin: 0 auto; padding-top: 100px; min-height: 70vh;" >
     <div class="col-md-8 offset-md-2">
         <div class="card">
             <div class="card-body">
@@ -81,10 +78,10 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr th:each="subject, num : ${adminSubDTOList}">
-                        <td th:text="${num.count}"></td>
+                    <tr th:each="subject : ${adminSubDTOList}">
+                        <td th:text="${subject.no}"></td>
                         <td th:text="${subject.course}"></td>
-                        <td style="text-align: center"><a th:href="|@{/adminSubject/read(no=${subject.no})}|" class="text-decoration-none">[[${subject.name}]]</a></td>
+                        <td style="text-align: center"><a th:href="|@{/admin_subject/read(no=${subject.no})}|" class="text-decoration-none">[[${subject.name}]]</a></td>
                         <td th:text="${subject.email}"></td>
                         <td th:text="${subject.tel}"></td>
                         <td th:text="${#temporals.format(subject.regDate, 'yyyy-MM-dd')}"></td>

@@ -28,11 +28,11 @@
     </section>
 
     <section id="pricing" class="pricing" style="padding-top: 100px;">
-        <div class="container back_white" data-aos="fade-up" style="width: 50%; margin: 0 auto; padding-top: 100px; min-height: 70vh;">
+        <div class="container" data-aos="fade-up">
             <div class="col-lg-12" data-aos="fade-up" data-aos-delay="200">
                 <div class="pricing-item featured" style="padding:0;">
                     <form th:action="@{/notice/modify/{id}(id=${boardDTO.id})}" method="post">
-                    <div class="col-12" >
+                    <div class="col-12">
                             <div class="card w-100">
                                 <div class="card-body">
                                     <div class="table-responsive project-list">
@@ -48,7 +48,7 @@
                                                     <div id="editor">
                                                         <textarea class="input" id="content" type="text" th:utext="${boardDTO.content}" required th:name="content" placeholder="내용"></textarea>
                                                     </div>
-                                                    <script th:inline="javascript">
+                                                    <script>
                                                         const Editor = toastui.Editor;
                                                         const textarea = document.querySelector('#myTextarea');
 
@@ -80,7 +80,7 @@
                                             </div>
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text">작성자</span>
-                                                <input type="text" class="form-control"  th:value="${boardDTO.writer}" readonly>
+                                                <input type="text" class="form-control"  th:value="${name}" readonly>
                                             </div>
 
                                             <div class="input-group mb-3">
@@ -212,6 +212,12 @@
                                     <input type="submit" value="수정하기" class="btn btn-primary" />
                                 </div>
                             </div>
+                            <div class="btn_group">
+                                <input type="submit" value="수정하기" class="btn btn-primary" />
+                            </div>
+                        </div>
+                        <div class="btn_group">
+                            <input type="submit" value="수정하기" class="btn btn-primary" />
                         </div>
                     </form>
                 </div>

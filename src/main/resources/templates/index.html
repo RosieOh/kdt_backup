@@ -6,11 +6,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta
-            content="minimum-scale=1.0, width=device-width, maximum-scale=1, ser-scalable=no"
-            name="viewport"
+      content="minimum-scale=1.0, width=device-width, maximum-scale=1, ser-scalable=no"
+      name="viewport"
     />
     <title>천재IT교육센터</title>
     <th:block th:replace="include/head :: head"></th:block>
+    <script th:src="@{../static/js/carousel.js}"></script>
   </head>
   <body>
     <th:block th:replace="include/header :: header"></th:block>
@@ -25,6 +26,8 @@
             <button type="button" id="ban_btn" class="button">사전예약</button>
           </div>
         </div>
+        <button class="prev" type="button">prev</button>
+        <button class="next" type="button">next</button>
       </section>
 
       <!--     Section 1 - 카드 -->
@@ -49,7 +52,7 @@
               <img
                 class="radius2"
                 th:src="@{/picture/common/index_Big.jpg}"
-                alt=""
+                alt="BigData 배너 이미지"
               />
             </div>
             <div class="card-content">
@@ -58,8 +61,7 @@
                   에듀테크 AI, 빅데이터 개발자 <br />교육과정
                 </h4>
               </div>
-              <a th:href="@{subSign}" class="button width">접수하기</a>
-
+              <button class="course_button">접수하기</button>
             </div>
           </div>
           <div class="column text_center radius border1">
@@ -67,7 +69,7 @@
               <img
                 class="radius2"
                 th:src="@{/picture/common/index_Full.jpg}"
-                alt=""
+                alt="FullStack 배너 이미지"
               />
             </div>
             <div class="card-content">
@@ -76,8 +78,7 @@
                   에듀테크 JAVA 풀스택 개발자 <br />교육과정
                 </h4>
               </div>
-              <a th:href="@{subSign}" class="button width">접수하기</a>
-
+              <button class="course_button">접수하기</button>
             </div>
           </div>
           <div class="column text_center radius border1">
@@ -85,7 +86,7 @@
               <img
                 class="radius2"
                 th:src="@{/picture/common/index_PM.jpg}"
-                alt=""
+                alt="PM 배너 이미지"
               />
             </div>
             <div class="card-content">
@@ -94,8 +95,7 @@
                   에듀테크 PM(콘텐츠 기획자) <br />교육과정
                 </h4>
               </div>
-              <a th:href="@{subSign}" class="button width">접수하기</a>
-
+              <button class="course_button">접수하기</button>
             </div>
           </div>
         </div>
@@ -124,7 +124,7 @@
               <img
                 class="radius2"
                 th:src="@{/picture/common/blog_1.jpg}"
-                alt=""
+                alt="블로그 이미지 1"
               />
             </div>
           </div>
@@ -133,7 +133,7 @@
               <img
                 class="radius2"
                 th:src="@{/picture/common/blog_2.jpg}"
-                alt=""
+                alt="블로그 이미지 2"
               />
             </div>
           </div>
@@ -142,7 +142,7 @@
               <img
                 class="radius2"
                 th:src="@{/picture/common/blog_3.png}"
-                alt=""
+                alt="블로그 이미지 3"
               />
             </div>
           </div>

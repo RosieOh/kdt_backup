@@ -9,13 +9,13 @@
         <div class="container back_white">
           <div class="navbar-brand ml-0">
             <a class="navbar-item" href="https://www.moel.go.kr/">
-              <img th:src="@{/picture/common/worksenterlogo.png}" alt="고용노동부 logo">
+              <img th:src="@{/picture/common/고용노동부logo.png}" alt="고용노동부 logo">
             </a>
             <a class="navbar-item logo_img" href="https://www.chunjae.co.kr/">
-              <img th:src="@{/picture/common/chunjaelogo.png}" alt="천재교육 logo">
+              <img th:src="@{/picture/common/천재교육logo.png}" alt="천재교육 logo">
             </a>
             <a class="navbar-item" href="https://chunjaetext.co.kr/">
-              <img th:src="@{/picture/common/chunjaebooklogo.png}" alt="천재교과서 logo">
+              <img th:src="@{/picture/common/천재교과서logo.png}" alt="천재교과서 logo">
             </a>
           </div>
 
@@ -25,13 +25,13 @@
                 <a class="navbar-link is-arrowless" th:href="@{/}">홈</a>
               </li>
               <li class="navbar-item">
-                <a class="navbar-link is-arrowless" th:href="@{/data}"
+                <a class="navbar-link is-arrowless" th:href="@{/bigdata}"
                 >AI·데이터 과정</a
                 >
               </li>
 
               <li class="navbar-item">
-                <a class="navbar-link is-arrowless" th:href="@{/java}"
+                <a class="navbar-link is-arrowless" th:href="@{/fullStack}"
                 >풀스택 과정</a
                 >
               </li>
@@ -57,17 +57,22 @@
                     <ul>
                       <th:block sec:authorize="hasAnyAuthority('ADMIN', 'MANAGER')">
                         <li class="navbar-item">
-                          <a class="navbar-link is-arrowless" th:href="@{/adminSubject/list}">
+                          <a class="navbar-link is-arrowless" th:href="@{/admin_subject/list}">
                             과정 별 신청 현황
                           </a>
                         </li>
                         <li class="navbar-item">
-                          <a class="navbar-link is-arrowless" th:href="@{/apply/list}">
+                          <a class="navbar-link is-arrowless" th:href="@{/admin/apply/list}">
                             사전 신청 현황
                           </a>
                         </li>
                         <li class="navbar-item">
-                          <a class="navbar-link is-arrowless" th:href="@{/modifyBoard/list}">
+                          <a class="navbar-link is-arrowless" th:href="@{/admin/apply/list}">
+                            사전 신청 현황
+                          </a>
+                        </li>
+                        <li class="navbar-item">
+                          <a class="navbar-link is-arrowless" th:href="@{/admin/modifyBoard/list}">
                             수정요청
                           </a>
                         </li>
@@ -88,6 +93,10 @@
                   </div>
                 </div>
               </th:block>
+              <!-- <form th:action="@{/logout}" method="post">
+                <a href="#" onclick="this.closest('form').submit();" class="navbar-item">로그아웃</a>
+              </form> -->
+
             </ul>
           </div>
         </div>

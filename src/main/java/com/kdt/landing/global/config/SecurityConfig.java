@@ -41,7 +41,13 @@ public class SecurityConfig {
                         .usernameParameter("email")
                         .passwordParameter("pw"))
             .logout((logout) -> logout.logoutUrl("/logout").logoutSuccessUrl("/"))
-                .exceptionHandling((exceptionHandling) -> exceptionHandling.authenticationEntryPoint(new CustomAuthenticationEntryPoint()))
+                .exceptionHandling((exceptionHandling) -> {
+                    exceptionHandling
+                            .authenticationEntryPoint(new CustomAuthenticationEntryPoint())
+                            .accessDeniedPage("/denied") // 접근 거부 페이지 설정
+                            .defaultAuthenticationEntryPointFor(new Http403ForbiddenEntryPoint(), new AntPathRequestMatcher("/error-500")); // 500 에러 페이지 설정
+                })
+
                 .headers((headers) -> headers.addHeaderWriter(new XFrameOptionsHeaderWriter(XFrameOptionsHeaderWriter.XFrameOptionsMode.SAMEORIGIN)));
         return http.build();
     }

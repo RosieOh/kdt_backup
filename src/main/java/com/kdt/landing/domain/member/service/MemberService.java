@@ -11,6 +11,7 @@ public interface MemberService {
     public List<MemberJoinDTO> memberList();
     public PasswordEncoder passwordEncoder();
     public MemberJoinDTO getEmail(String email);
+//    public MemberJoinDTO getName(String name);
     public void memberInsert(MemberJoinDTO memberJoinDTO);
     public Member LoginEmail(String email);
     public void memberUpdate(MemberJoinDTO memberJoinDTO);

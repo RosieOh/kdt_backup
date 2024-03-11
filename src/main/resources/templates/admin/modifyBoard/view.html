@@ -27,43 +27,59 @@
         </nav>
     </section>
 
-    <div class="container back_white" style="width: 50%; margin: 0 auto; padding-top: 100px; min-height: 70vh;">
-        <table class="board_detail">
-            <colgroup>
-                <col width="15%"/>
-                <col width="35%"/>
-                <col width="15%"/>
-                <col width="35%"/>
-            </colgroup>
-            <tbody>
-            <tr>
-                <th scope="row">글 번호</th>
-                <td th:text="${boardList.id}"></td>
-            </tr>
-            <tr>
-                <th scope="row">작성자</th>
-                <td th:text="${name}"></td>
-                <th scope="row">작성일</th>
-                <td th:text="${#temporals.format(boardList.regDate, 'yyyy-MM-dd HH:mm:ss')}"></td>
-            </tr>
-            <tr>
-                <th scope="row">제목</th>
-                <td th:text="${boardList.title}"></td>
-                <th scope="row">첨부파일</th>
-                <td><a th:href="@{'/download/' + ${boardList.fileId}}">[[${fileList.originFileName}]]</a></td>
-            </tr>
-            <tr>
-                <td colspan="4" class="view_text">
-                    <textarea title="내용" id="contents" name="contents" th:text="${boardList.content}" readonly></textarea>
-                </td>
-            </tr>
-            </tbody>
-        </table>
-        <div class="btn-group mt-3">
-            <a class="button" th:href="@{/modifyBoard/list}" style="color: #fff; margin-top: 0px;">목록</a>
-            <a class="button" style="margin-top: 0px;" th:href="@{/modifyBoard/remove(id=${boardList.id})}">삭제</a>
-            <a class="button" style="margin-top: 0px;" th:href="@{/modifyBoard/modify(id=${boardList.id})}">수정</a>
-        </div>
+    <div class="container" style="padding-bottom: 100px;">
+        <section id="pricing" class="pricing" style="padding-top: 40px !important;">
+            <div class="container" data-aos="fade-up">
+                <div class="col-lg-12" data-aos="fade-up" data-aos-delay="200">
+                    <div class="pricing-item featured" style="padding: 0;">
+                        <section style="padding-top: 0;">
+                            <div style="display: flex; justify-content: center;">
+                                <div class="card" style="width: 100%;">
+                                    <div class="card-body">
+                                        <div class="card-title" style="padding-bottom: 20px; border-bottom: 1px solid;">
+                                            <div class="d-flex align-items-center mt-3">
+                                                <div class="ms-3">
+                                                    <table>
+                                                        <tr>
+                                                            <td>작성자 | </td>
+                                                            <td>
+                                                                <input type="text" class="form-control" th:value="*{name}" readonly>
+                                                            </td>
+                                                            <td>작성일 | </td>
+                                                            <td>
+                                                                <input type="text" class="form-control" th:value="${#temporals.format(boardList.regDate, 'yyyy-MM-dd HH:mm:ss')}" readonly>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text">Title</span>
+                                            <input type="text" class="form-control" th:value="${boardList.title}" readonly>
+                                        </div>
+                                        <div class="card-text mt-4">
+                                            <textarea class="form-control col-sm-5" rows="5" readonly>[[${boardList.content}]]</textarea>
+                                        </div>
+
+                                        <div class="card-text mt-4" th:if="${boardList.fileId}">
+                                            <strong>첨부파일 : </strong>
+                                            <a th:href="@{'/download/' + ${boardList.fileId}}">[[${fileList.originFileName}]]</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="width: 100%; margin-top: 30px;">
+                                <button class="btn btn-light btn-lg" style="width:200px; float: right; background-color: #0d42ff; font-weight: bold; color: #fff;"><a th:href="@{/modifyBoard/list}" style="color: #fff;">목록</a></button>
+                                <button class="btn btn-light btn-lg" style="width:200px; float: right; border-color: #000000; font-weight: bold; margin-left: 10px; margin-right: 10px; "><a th:href="@{/modifyBoard/remove(id=${boardList.id})}">삭제</a></button>
+                                <button class="btn btn-dark btn-lg" style="width:200px; float: right; background-color: #4f5665; font-weight: bold; "><a class="button" th:href="@{/modifyBoard/modify(id=${boardList.id})}" style="color: #fff;">수정</a></button>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 
     <script th:inline="javascript">
         const errors = [[${errors}]]

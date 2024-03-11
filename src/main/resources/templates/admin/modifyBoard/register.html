@@ -27,67 +27,65 @@
         </nav>
     </section>
 
-    <section id="pricing" class="pricing" style="padding-top: 100px; min-height: 70vh;">
-        <div class="container back_white" data-aos="fade-up">
+    <section id="pricing" class="pricing" style="padding-top: 100px;">
+        <div class="container" data-aos="fade-up">
             <div class="col-lg-12" data-aos="fade-up" data-aos-delay="200">
                 <div class="pricing-item featured" style="padding:0;">
                     <form th:action="@{/modifyBoard/register}" method="post" enctype="multipart/form-data">
                         <div class="col-12">
-                            <div class="card w-100" >
+                            <div class="card w-100">
                                 <div class="card-body">
                                     <div class="table-responsive project-list">
-                                        <table class="table project-table table-centered table-nowrap" style="width: 50%; margin: 0 auto; padding-top: 100px; ">
+                                        <!-- Added border attribute to the table -->
+                                        <table class="table project-table table-centered table-nowrap" style="border: none;">
                                             <tbody>
+                                            <tr>
+                                                <td style="border: none;"><input type="text" id="title" name="title" placeholder="제목을 입력하세요" class="form-control" required></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="border: none;">
+                                                    <div id="editor">
+                                                        <textarea name="content" id="myTextarea" rows="8" maxlength="1000" class="form-control" style="height: 200px; border: 1px solid #cbcbcb"></textarea>
+                                                    </div>
+                                                    <script>
+                                                        const Editor = toastui.Editor;
+                                                        const textarea = document.querySelector('#myTextarea');
+
+                                                        // 숨겨진 textarea 대신에 에디터를 생성할 div 요소를 만듭니다.
+                                                        const editorDiv = document.createElement('div');
+                                                        editorDiv.id = 'editor';
+                                                        textarea.parentNode.insertBefore(editorDiv, textarea);
+                                                        textarea.style.display = 'none';  // 숨겨진 textarea
+
+                                                        const editor = new Editor({
+                                                            el: editorDiv,
+                                                            height: '500px',
+                                                            initialEditType: 'markdown',
+                                                            previewStyle: 'vertical',
+                                                            initialValue: textarea.value  // 초기값을 textarea의 값으로 설정
+                                                        });
+
+                                                        // 에디터의 내용이 변경될 때마다 textarea에 값을 업데이트합니다.
+                                                        editor.on('change', () => {
+                                                            textarea.value = editor.getMarkdown();
+                                                        });
+                                                    </script>
+                                                </td>->
+                                            </tbody>
                                             <div class="input-group mb-3">
                                                 <select name="boardType" id="boardType">
                                                     <option value="MODIFY" th:selected="${boardType == 'MODIFY'}">수정 요청</option>
                                                 </select>
                                             </div>
                                             <div class="input-group mb-3">
-                                                <span class="input-group-text">작성자 | </span>
+                                                <span class="input-group-text">작성자</span>
                                                 <input type="text" name="writer" class="form-control"  th:value="${name}" readonly>
                                             </div>
-                                            <div class="input-group mb-3">
-                                                <span class="input-group-text">첨부파일 | </span>
-                                                <input type="file" class="form-control" name="file">
-                                            </div>
-                                            <div class="input-group mb-3">
-                                                <span class="input-group-text">제목 | </span>
-                                                <input type="text" id="title" name="title" placeholder="제목을 입력하세요" class="form-control" required>
-                                            </div>
                                         </table>
-                                        <tr>
-                                            <td style="border: none;">
-                                                <div id="editor">
-                                                    <textarea name="content" id="myTextarea" rows="8" maxlength="1000" class="form-control" style="height: 200px; border: 1px solid #cbcbcb"></textarea>
-                                                </div>
-                                                <script>
-                                                    const Editor = toastui.Editor;
-                                                    const textarea = document.querySelector('#myTextarea');
-
-                                                    // 숨겨진 textarea 대신에 에디터를 생성할 div 요소를 만듭니다.
-                                                    const editorDiv = document.createElement('div');
-                                                    editorDiv.id = 'editor';
-                                                    textarea.parentNode.insertBefore(editorDiv, textarea);
-                                                    textarea.style.display = 'none';  // 숨겨진 textarea
-
-                                                    const editor = new Editor({
-                                                        el: editorDiv,
-                                                        height: '500px',
-                                                        initialEditType: 'markdown',
-                                                        previewStyle: 'vertical',
-                                                        initialValue: textarea.value  // 초기값을 textarea의 값으로 설정
-                                                    });
-
-                                                    // 에디터의 내용이 변경될 때마다 textarea에 값을 업데이트합니다.
-                                                    editor.on('change', () => {
-                                                        textarea.value = editor.getMarkdown();
-                                                    });
-                                                </script>
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                        </table>
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text">첨부파일</span>
+                                            <input type="file" class="form-control" name="file">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
