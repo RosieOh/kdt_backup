@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head style="min-height: 100vh;">
+    <meta charset="utf-8">
+    <meta
+            content="minimum-scale=1.0, width=device-width, maximum-scale=1, ser-scalable=no"
+            name="viewport"
+    />
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Topic Listing Bootstrap 5 Template</title>
+    <th:block th:replace="~{include/head :: head}"></th:block>
+
+<!--    <script th:src="@{../static/js/email.js}"></script>-->
+</head>
+
+<body>
+
+<th:block th:replace="~{include/header :: header}"></th:block>
+
+<section class="page-title" style="padding-top: 60px; ">
+    <nav class="breadcrumb has-succeeds-separator is-medium is-right mt-3 p-4" style="background: #f1f4f9; height: 150px;" aria-label="breadcrumbs">
+        <ul class="mr-5">
+            <li><a th:href="@{/}"><i class="xi-home is-size-3"></i>홈</a></li>
+            <li><a th:href="@{/member/join}">회원가입</a></li>
+        </ul>
+        <p class="title has-text-centered mt-1 mb-2">회원가입</p>
+    </nav>
+</section>
+
+
+<form th:action="@{/member/joinPro}" method="post" th:object="${memberJoinDTO}" th:class="form-horizontal" id="joinForm">
+    <div class="member">
+
+        <!-- 1. 로고 -->
+        <img class="logo" th:src="@{/static/images/1.png}" />
+
+        <!-- 2. 필드 -->
+
+        <div class="field">
+            <b>이메일</b>
+            <input type="email" name="email" id="email" placeholder="이메일" class="form-control" style="background-color: white;"  required>
+            <input type="hidden" id="emailCK" name="emailCK" value="no">
+            <button type="button" onclick="PostEmail()" id="PostEmailbtn" class="btn1" style="width: 160px; margin-top: 10px; margin-left: 0"> 인증번호 보내기 </button>
+            <div class="insubForm" style="display: none; ">
+                <label class="form-label blind" for="insub">인증번호</label>
+                <input type="text" id="insub" name="insub" placeholder="인증번호 입력" class="form-control">
+                <button type="button" onclick="Insub()" class="btn1" style="width: 150px; margin-top: 10px; margin-left: 0"> 인증번호 인증</button>
+                <button type="button" onclick="Insubreset()" class="btn1" style="width: 150px; margin-top: 10px; margin-left: 0"> 취소</button>
+            </div>
+        </div>
+
+        <div class="field">
+            <b>비밀번호</b>
+            <input class="userpw" name="pw" id="pw" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&.,])[A-Za-z\d$@$!%*#?&]{8,16}$" placeholder="비밀번호" type="password">
+            <p class="info mb-0"><i class="fas fa-check"></i> 비밀번호는 최소 8자리에서 최대 16자리 <br> 숫자, 영문, 특수문자 각 1개 이상 포함</p>
+        </div>
+
+        <div class="field">
+            <b>비밀번호 재확인</b>
+            <input class="userpw-confirm" name="pw2" id="pw2" type="password">
+        </div>
+
+        <div class="field">
+            <b>이름</b>
+            <input type="text" name="name" id="name" placeholder="이름" class="form-control" minlength="2" maxlength="8" required />
+        </div>
+
+        <!-- 3. 필드(생년월일) -->
+        <div class="field birth">
+            <b>생년월일</b>
+            <div>
+                <input type="number" class="form-control" placeholder="년(4자)">
+                <select>
+                    <option value="">월</option>
+                    <option value="">1월</option>
+                    <option value="">2월</option>
+                    <option value="">3월</option>
+                    <option value="">4월</option>
+                    <option value="">5월</option>
+                    <option value="">6월</option>
+                    <option value="">7월</option>
+                    <option value="">8월</option>
+                    <option value="">9월</option>
+                    <option value="">10월</option>
+                    <option value="">11월</option>
+                    <option value="">12월</option>
+                </select>
+                <input type="number" class="form-control" placeholder="일">
+            </div>
+        </div>
+
+        <div class="field tel-number">
+            <b>휴대전화</b>
+            <select>
+                <option value="">대한민국 +82</option>
+            </select>
+            <input type="tel" name="tel" class="form-control" placeholder="전화번호 입력">
+
+        <!-- 6. 가입하기 버튼 -->
+        <button type="submit" class="button is-block is-fullwidth" >회원가입</button>
+    </div>
+    </div>
+</form>
+
+<script th:inline="javascript">
+    $(document).ready(function(){
+        $("#id").keyup(function(){
+            $("#idCk").val("no");
+            if($(this).val()!=""){
+                if($("#msg").hasClass("no_check")) {
+                    $("#msg").removeClass("no_check");
+                }
+                $("#msg").html("아이디 입력중입니다.").css("color", "black");
+                $("#id").focus();
+            } else {
+                $("#msg").addClass("no_check").html("아이디 중복 체크를 하지 않으셨습니다.").css("color", "red");
+            }
+        });
+    });
+
+    function idCheck(){
+        if($("#id").val()==""){
+            alert("아이디를 입력하지 않았습니다.");
+            $("#id").focus();
+            return false;
+        }
+
+        var params = {"id" : $("#id").val()};
+        $.ajax({
+            url:"/member/idCheckPro",	//아이디가 전송되어질 곳
+            type:"post",
+            data:JSON.stringify(params),
+            dataType:"json",
+            contentType:"application/json",
+            success : function(result) {
+                var idPass = result;
+                if(idPass == false){
+                    $("#idCk").val("no");
+                    $("#msg").addClass("no_check").html("사용할 수 없는 아이디입니다. 다시 입력하시기 바랍니다.").css("color", "red");
+                    $("#id").focus();
+                } else if(idPass == true){
+                    $("#idCk").val("yes");
+                    if($("#msg").hasClass("no_check")) {
+                        $("#msg").removeClass("no_check");
+                    }
+                    $("#msg").html("사용 가능한 아이디입니다.").css("color", "blue");
+                } else if(idPass==""){
+                    $("#msg").addClass("no_check").text("아이디가 확인되지 않았습니다. 다시 시도하시기 바랍니다.").css("color", "red");
+                }
+            }
+        });
+    }
+
+    function joinCheck(f){
+        if(f.pw.value!=f.pw2.value){
+            alert("비밀번호와 비밀번호 확인이 서로 다릅니다.");
+            f.pw.focus();
+            return false;
+        }
+        if(f.pw.value.length(8-16)){
+            alert("비밀번호는 최소 8자리에서 최대 16자리까지 숫자, 영문, 특수문자 각 1개 이상 포함해주세요.");
+            f.pw.focus();
+            return false;
+        }
+        if(f.idCk.value!="yes"){
+            alert("아이디 중복 체크를 하지 않으셨습니다.");
+            $("#id").focus();
+            return false;
+        }
+        if(f.emailCK.value!="Yes"){
+            alert("이메일 인증을 하지 않으셨습니다.");
+            $("#email").focus();
+            return false;
+        }
+        let value = $("#pw").val();
+
+        let pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&.,])[A-Za-z\d$@$!%*#?&]{8,16}$"
+        if (!pattern.test(value)) {
+            alert("숫자, 영문, 특수문자 각 1개 이상 포함입니다.");
+            $("#pw").focus();
+            return false;
+        }
+    }
+</script>
+
+<script th:inline="javascript">
+
+    var code = "";
+
+    function PostEmail(){
+        alert("이메일이 전송중입니다. 잠시만 기다려주세요.")
+
+        let params = {"email" : $("#email").val()};
+        $("#email").attr("readonly","readonly");
+        $(this).css("background-color","darkgray")
+
+        $.ajax({
+            url:"/email",	//아이디가 전송되어질 곳
+            type:"post",
+            data:JSON.stringify(params),
+            dataType:"json",
+            contentType:"application/json",
+            success : function(mail) {
+                code = mail.code;
+                alert("인증번호가 전송되었습니다.");
+                $("#PostEmailbtn").css("display", "none")
+                $(".insubForm").css("display", "block");
+            }, error : function (err) {
+                alert("인증번호 전송에 실패하였습니다.");
+                $("#email").attr("readonly", false);
+                $("#email").focus();
+
+            }
+        });
+    }
+
+    function Insub() {
+
+        var insub = $("#insub").val();
+
+        if(insub == code){
+            alert("인증번호가 일치합니다.")
+            $("#emailCK").val("Yes")
+            $(".insubForm").css("display", "none");
+        } else {
+            alert("인증번호가 일치하지 않습니다.")
+            $("#insub").focus();
+        }
+    }
+
+    function Insubreset(){
+        $("#PostEmailbtn").css("display", "block")
+        $(".insubForm").css("display", "none");
+        $("#email").attr("readonly", false);
+
+    }
+</script>
+
+<th:block th:replace="~{include/footer :: footer}"></th:block>
+
+</body>
+</html>

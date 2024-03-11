@@ -1,0 +1,284 @@
+/* 신청 양식 폼 */
+
+.subSign_form {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  width: 920px;
+  height: auto;
+  background-color: var(--c-white);
+  border: none;
+  border-radius: 30px;
+  padding: 7rem 2rem;
+}
+
+.subSign_form p {
+  font-size: 16px;
+  padding-left: 0.5rem;
+  line-height: 1.5;
+}
+
+.subSign_form strong {
+  color: var(--c-main);
+}
+
+@media screen and (max-width: 815px) {
+  .subSign_form {
+    width: 100%;
+  }
+
+  .subSign_form p {
+    font-size: 12px;
+  }
+}
+
+.subSign_form h1 {
+  margin: 0 0 2rem 0;
+  font-size: 48px;
+  color: black;
+}
+
+.subSign_form h3 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.subSign_title {
+  margin: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.subSign_form em {
+  color: var(--c-main);
+  font-weight: bold;
+  font-style: normal;
+  margin-left: 3px;
+}
+
+.sign_list {
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+.sign_list_wrap {
+  width: 100%;
+  display: block;
+}
+
+.sign_list_title {
+  display: flex;
+  font-size: 17px;
+  font-weight: bold;
+  margin: 0 0 0.5rem 0.2rem;
+}
+
+.agree {
+  border: 1px solid var(--c-back_lightgray);
+  color: var(--c-black);
+  display: inline-block;
+  background-color: var(--c-white);
+  padding: 1rem;
+  border-radius: 20px;
+  margin-top: 2.5rem;
+  width: 100%;
+}
+
+.agree:hover {
+  cursor: pointer;
+}
+
+.paper {
+  border: none;
+  color: var(--c-black);
+  display: inline-block;
+  background-color: var(--c-white);
+  width: 100%;
+  margin-left: 0.75rem;
+}
+
+.paper:hover {
+  color: var(--c-hover);
+  cursor: pointer;
+}
+
+.paper .scroll_wrap {
+  scale: none;
+  height: 80px;
+}
+.paper a {
+  color: var(--c-back_gray);
+}
+.paper h5 {
+  font-size: 14px;
+  color: var(--c-back_gray);
+  font-weight: bold;
+}
+
+.agree a {
+  color: var(--c-black);
+  background-color: transparent;
+  font-size: 16px;
+  float: right;
+}
+
+.agree p {
+  color: var(--c-black);
+}
+
+.scroll_wrap {
+  display: none;
+  margin: 0.5rem 0 0 1rem;
+}
+
+.scrollBox {
+  overflow-y: scroll;
+  height: 90px;
+}
+
+.subSign_form.field {
+  margin-top: 5rem;
+}
+
+.field button {
+  width: 300px;
+}
+
+/*  */
+
+label {
+  display: block;
+  line-height: 1.5rem;
+  padding: 0.2em 0.4em;
+}
+.subSign_form label p {
+  font-size: 13px;
+  color: gray;
+}
+
+[type="radio"] + span {
+  margin-left: 0.5rem;
+  vertical-align: text-bottom;
+}
+
+[type="radio"] {
+  appearance: none;
+  border: max(2px, 0.1em) solid var(--c-back_gray);
+  border-radius: 50%;
+  width: 1rem;
+  height: 1rem;
+  line-height: 2;
+  transition: border 0.1s ease-in-out;
+}
+
+[type="radio"]:checked {
+  border: 0.4em solid var(--c-sub);
+}
+
+[type="radio"]:focus-visible {
+  outline-offset: max(2px, 0.1em);
+  outline: max(2px, 0.1em) dotted tomato;
+}
+
+[type="radio"]:hover {
+  box-shadow: 0 0 0 max(4px, 0.2em) var(--c-back_lightgray);
+  cursor: pointer;
+}
+
+[type="radio"]:disabled {
+  background-color: var(--c-back_gray);
+  box-shadow: none;
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+[type="radio"]:disabled + span {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+[type="checkbox"] {
+  appearance: none;
+  border: max(2px, 0.1em) solid var(--c-back_gray);
+  border-radius: 50%;
+  width: 1rem;
+  height: 1rem;
+  transition: border 0.1s ease-in-out;
+}
+
+[type="checkbox"]:checked {
+  border: 0.4em solid var(--c-main);
+}
+
+[type="checkbox"]:focus-visible {
+  outline-offset: max(2px, 0.1em);
+  outline: max(2px, 0.1em) dotted tomato;
+}
+
+[type="checkbox"]:hover {
+  box-shadow: 0 0 0 max(4px, 0.2em) var(--c-back_lightgray);
+  cursor: pointer;
+}
+
+[type="checkbox"]:disabled {
+  background-color: var(--c-back_gray);
+  box-shadow: none;
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+[type="checkbox"]:disabled + span {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+[type="checkbox"] + span {
+  margin-left: 0.5rem;
+  vertical-align: text-bottom;
+}
+
+.label_input {
+  margin-left: 1rem;
+  border-style: solid;
+  border-width: 0 0 1px 0;
+  font-size: 14px;
+  height: 2.5em;
+  padding-bottom: calc(0.5em - 1px);
+  padding-left: calc(0.75em - 1px);
+  padding-right: calc(0.75em - 1px);
+  padding-top: calc(0.5em - 1px);
+  position: relative;
+  outline: none;
+  width: 60%;
+}
+
+.textCount {
+  text-align: right;
+  padding-right: 0.5rem;
+  color: var(--c-back_gray);
+}
+
+.sign_list_chek {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+.agree_check {
+  margin: 1rem 0 0 1rem;
+}
+
+.agree_button {
+  background-color: var(--c-sub);
+  padding: 1rem 1.5rem;
+  color: var(--c-white);
+  border: none;
+  border-radius: 30px;
+  font-size: 1.5rem;
+  width: 80%;
+  margin-top: 3rem;
+}
+
+.agree_button:hover {
+  background-color: var(--c-hover);
+  color: var(--c-white);
+}

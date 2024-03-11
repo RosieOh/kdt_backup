@@ -1,0 +1,202 @@
+.navbar {
+  width: 100vw;
+  position: fixed;
+  top: 0;
+}
+
+.border1 {
+  box-shadow: 2px 2px 10px 1px gray;
+}
+
+.box_shadow_in {
+  box-shadow: inset -5px 0 1px gray;
+}
+
+/* index.test */
+
+.small_title {
+  font-weight: bold;
+  text-align: left;
+  padding-bottom: 15px;
+  color: var(--c-sub);
+}
+.small_title_2 {
+  text-align: center;
+  padding-bottom: 15px;
+  font-weight: bold;
+  color: var(--c-sub);
+}
+
+.title_sub_1 {
+  text-align: left;
+}
+
+.card-image {
+  width: 400px;
+}
+
+@media screen and (max-width: 1406px) {
+  .card-image {
+    width: 100%;
+  }
+}
+
+.course_button {
+  background-color: var(--c-sub);
+  width: 100%;
+  padding: 1rem 1.5rem;
+  color: var(--c-white);
+  border: none;
+  border-radius: 15px;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.course_button:hover {
+  background-color: var(--c-hover);
+  color: var(--c-white);
+}
+
+.font_strong {
+  color: var(--c-main);
+}
+
+.benefits_title {
+  color: var(--c-main);
+  font-size: 1.25em;
+  font-weight: bold;
+  border-width: 0 0 1px;
+  border-color: var(--c-main);
+  border-style: solid;
+  padding-bottom: 0.5rem;
+}
+.benefits_sub {
+  display: flex;
+  margin-top: 1.5rem;
+}
+
+.benefits_sub_in {
+  margin: 0.5rem 1rem;
+}
+
+.title_2 {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.125;
+}
+
+.subtitle_2 {
+  margin-bottom: 4rem;
+}
+
+.image_section {
+  width: 300px;
+  height: 400px;
+}
+
+.multiline_box_1 {
+  margin: -5px;
+  padding-bottom: 20px;
+}
+
+.media-left {
+  margin: 0;
+  width: 50px;
+  height: auto;
+}
+
+.media-left_2 {
+  margin: 0;
+  width: 60px;
+  height: 60px;
+}
+
+/* 푸터 구역 스타일 */
+
+.ft {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background: #172538;
+  padding: 2rem;
+}
+
+.ft_wrap {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1152px;
+  width: 100%;
+}
+
+@media screen and (max-width: 700px) {
+  .ft_wrap {
+    flex-direction: column;
+  }
+}
+
+.ft_wrap_text {
+  display: flex;
+  flex-direction: column;
+}
+
+.ft_wrap2 {
+  width: 1200px;
+  padding: 40px 0px;
+  padding-left: 200px;
+  margin-left: 400px;
+  text-align: left;
+}
+
+.copyright {
+  font-weight: normal;
+  line-height: 25px;
+  font-size: 12px;
+  text-align: left;
+}
+
+.copyright span {
+  color: var(--c-white);
+}
+
+.cp {
+  font-size: 12px;
+  color: var(--c-white);
+  line-height: 20px;
+  margin-top: 10px;
+  text-align: left;
+}
+
+.cp_img {
+  align-self: flex-end;
+  padding-bottom: 15px;
+}
+
+.ft_logo {
+  width: 200px;
+  height: 50px;
+  background-color: var(--c-white);
+  margin-top: 4rem;
+}
+
+/* gotop */
+
+.gotop {
+  display: none;
+  position: fixed;
+  right: 2%;
+  top: 92%;
+  border-radius: 10px;
+  padding: 10px 15px;
+  background-color: var(--c-black);
+  color: var(--c-white);
+  transition: all 0.2s ease-in-out;
+}
+
+.gotop:hover {
+  background-color: var(--c-sub);
+}
+
+/* nav burger */
+
+.logo_img {
+}

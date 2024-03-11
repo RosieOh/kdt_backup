@@ -1,0 +1,554 @@
+<!Doctype html>
+
+<html
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+>
+<head>
+  <meta charset="UTF-8" />
+  <meta
+          content="minimum-scale=1.0, width=device-width, maximum-scale=1, ser-scalable=no"
+          name="viewport"
+  />
+  <title>bigdata 랜딩페이지</title>
+  <th:block th:replace="include/head :: head"></th:block>
+</head>
+  <body>
+  <th:block th:replace="include/header :: header"></th:block>
+    <div class="main">
+      <section class="container">
+
+        <!-- 상단배너 start -->
+        <section class="banner" id="banner">
+          <div class="banner_box">
+            <h4 class="font_white">2024 커리큘럼 전면 리뉴얼!</h4>
+            <h1 class="banner_title title_white_big" >Learn by Doing Project <br>
+              에듀테크 AI·데이터 개발자 과정 8기 모집</h1>
+            <div class="banner_btn">
+              <a th:href="@{subSign}" class="course_button">접수하기>></a>
+            </div>
+        </div>
+        </section>
+        <!-- 상단배너 end -->
+
+        <!-- 모집 카드 start -->
+        <section class="container container_bottom">
+          <div class="hero-body">
+            <div class="tile is-ancestor has-text-centered">
+              <div class="tile is-parent">
+                <article class="tile is-child box box_color border_ra">
+                  <p class="titleCard font_white">모집기간</p>
+                  <p class="subtitleCard font_white">
+                    <b>모집</b>
+                    <br />
+                    2023.03.05 ~ 2024.04.19
+                    <br />
+                    <br />
+                    <b>합격자 발표</b>
+                    <br />
+                    인터뷰 이후 일주일 이내
+                  </p>
+                </article>
+              </div>
+              <div class="tile is-parent">
+                <article class="tile is-child box box_color border_ra">
+                  <p class="titleCard font_white">교육기간</p>
+                  <p class="subtitleCard font_white">
+                    <b>교육</b>
+                    <br />
+                    2023.04.24 ~ 2024.10.28
+                    <br />
+                  </p>
+                </article>
+              </div>
+              <div class="tile is-parent">
+                <article class="tile is-child box box_color border_ra">
+                  <p class="titleCard font_white">참여대상</p>
+                  <ul class="subtitleCard">
+                    <li>국민 내일배움카드 <br>보유 혹은 발급 가능한 자</li>
+                  </ul>
+                  <ul class="subtitleCard">
+                    <li>K-Digital Traning <br>수강 이력이 없는 자</li>
+                  </ul>
+                  <ul class="subtitleCard">
+                    <li>정보통신 및 이공계,<br>교육 관련 전공자 우대</li>
+                  </ul>
+                </article>
+              </div>
+              <div class="tile is-parent">
+                <article class="tile is-child box box_color border_ra">
+                  <p class="titleCard font_white">지원방법</p>
+                  <p class="subtitleCard font_white">
+                    <b>서류 심사</b>
+                    <br />
+                    신청폼 작성
+                    <br />
+                    <br />
+                    <b>면접 심사</b>
+                    <br />
+                    AI 비대면 인터뷰
+                    <br />
+                    <br />
+                    <b>합격자 발표</b>
+                    <br />
+                    문자 개별 통보
+                    <br />
+                  </p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- 모집 카드 end -->
+
+        <!-- REVIEW start -->
+        <section class="container container_bottom">
+          <div class="hero-body flex_between">
+            <div class="">
+              <h4 class="small_title">REVIEW</h4>
+              <h1 class="title_white_big title_sub_1">
+                우수 교육생 천재그룹 채용까지<br />
+                실제 수료생분들이 추천합니다.
+              </h1>
+              <h4 class="font_white title_sub_1">1기, 2기 수료생 전원<b>인턴 100%</b> 1기, 2기 90%이상 <b>직원 전환!</b><br>
+              <b>6개월 REAL REVIEW로</b>빅데이터 과정 미리보기
+              </h4>
+              <div class="banner_btn">
+                <button class="button">
+                  수강후기 보러가기 >
+                </button>
+              </div>
+            </div>
+            <div class="slide slide_wrap">
+              <div class="slide_item">
+                <img th:src="@{/picture/bigdata/bigex_1.png}" alt="bigdata후기_1">
+              </div>
+              <div class="slide_item">
+                <img th:src="@{/picture/bigdata/bigex_2.png}" alt="bigdata후기_2">
+              </div>
+                <div class="slide_item">
+                  <img th:src="@{/picture/bigdata/bigex_3.png}" alt="bigdata후기_3">
+                </div>
+                <div class="slide_item">
+                  <img th:src="@{/picture/bigdata/bigex_4.png}" alt="bigdata후기_4">
+                </div>
+                <div class="slide_prev_button slide_button">◀</div>
+                <div class="slide_next_button slide_button">▶</div>
+              <ul class="slide_pagination"></ul>
+            </div>
+          </div>
+        </section>
+        <!-- REVIEW end -->
+
+
+        <!-- 모집 안내 start -->
+        <section class="container container_bottom">
+          <div class="mb-6 pb-3 columns is-multiline">
+            <div class="is-12 is-6-desktop mx-auto has-text-centered" id="infoFullTitle">
+              <h2 class="font_white mb-4 is-size-1 is-size-3-mobile has-text-weight-bold white">
+                모집 안내
+              </h2>
+              <p class="font_white" id="infoFull_subtitle">모집개요</p>
+
+            </div>
+          </div>
+          <div class="columns is-multiline card_center cardFull">
+            <div class="column is-12 is-6-desktop">
+              <div class="mb-6 is-flex">
+                <div class="iconBox">
+                  <div class="iconCard text_center">
+                    <p class="iconP"><i class="fas fa-file"></i></p>
+                    <p class="font_white">모집분야</p>
+                  </div>
+                </div>
+                <div class="ml-3 in_box">
+                  <ul>
+                    <li class="iconIntro">Java 풀스택 개발자 과정</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="mb-6 is-flex">
+                <div class="iconBox">
+                  <div class="iconCard text_center">
+                    <p class="iconP"><i class="fas fa-laptop-code"></i></p>
+                    <p class="font_white">교육기간</p>
+                  </div>
+                </div>
+                <div class="ml-3 in_box">
+                  <ul>
+                    <li class="iconIntro">
+                      2024.04.24 ~ 2024.10.28
+                      <br />
+                      09:00 ~ 18:00 (총 960시간)
+                    </li><br />
+                  </ul>
+                </div>
+              </div>
+              <div class="mb-6 is-flex">
+                <div class="iconBox">
+                  <div class="iconCard text_center">
+                    <p class="iconP"><i class="fas fa-building"></i></p>
+                    <p class="font_white">교육형태 및 장소</p>
+                  </div>
+                </div>
+                <div class="ml-3 in_box">
+                  <ul>
+                    <li class="iconIntro">오프라인 교육<br /> 서울 금천구 디지털로9길 23 <br />
+                      마리오아울렛2관 11층 천재IT교육센터<br />
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="column is-12 is-6-desktop">
+              <div class="mb-6 is-flex">
+                <div class="iconBox">
+                  <div class="iconCard text_center">
+                    <p class="iconP"><i class="fas fa-users"></i></p>
+                    <p class="font_white">모집인원</p>
+                  </div>
+                </div>
+                <div class="ml-3 in_box">
+                  <ul>
+                    <li class="iconIntro">각 과정별 20명</li><br /><br />
+                    </ul>
+                </div>
+              </div>
+              <div class="mb-6 is-flex">
+                <div class="iconBox">
+                  <div class="iconCard text_center">
+                    <p class="iconP"><i class="fas fa-calendar-alt"></i></p>
+                    <p class="font_white">모집기간</p>
+                  </div>
+                </div>
+                <div class="ml-3 in_box">
+                  <ul>
+                    <li class="iconIntro">2024.03.13 ~ 2024.04.19</li><br /><br />
+                  </ul>
+                </div>
+              </div>
+              <div class="mb-6 is-flex">
+                <div class="iconBox">
+                  <div class="iconCard text_center">
+                    <p class="iconP"><i class="fas fa-clipboard-list"></i></p>
+                    <p class="font_white">지원자격</p>
+                  </div>
+                </div>
+                <div class="ml-3 in_box" >
+                  <ul>
+                    <li class="iconIntro">국민내일배움카드 보유 혹은 발급 가능한 자</li>
+                    <li class="iconIntro">K-Digital Traning 수강 이력이 없는 자</li><br />
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- 모집 안내 end -->
+
+        <th:block th:replace="sub/sub_inclulde/benefit :: benefit"></th:block>
+
+
+        <!-- 커리큘럼 start -->
+        <section class="container container_bottom">
+            <div class="hero-body">
+              <div class="container has-text-centered">
+              <h4 class="small_title_2">CURRICULUM</h4>
+                <h1 class="title_white_big">  2024년 신규 커리큘럼</h1>
+                <p class="subtitle_white text_center"> 프로젝트 기반 AI·데이터 과정 커리큘럼 <br />
+                  7기 과정에서 습득하게 될 스킬들!
+                </p>
+              </div>
+            </div>
+          <div class="flex_around">
+            <div class="curri_text">
+              <div class="curri_text_in font_white">
+                <h4>
+                  에듀테크 AI 데이터
+                </h4>
+                <h4>
+                  개발자 교육과정
+                </h4>
+              </div>
+            </div>
+            <div class="curri_wrap">
+            <div class="curri_img_box">
+                  <img th:src="@{/picture/bigdata/skill/big_skill_1.png}" alt="big_skill 이미지1" class="radius2 curri_img mr_05"/>
+              </div>
+              <div class="curri_img_box">
+                  <img th:src="@{/picture/bigdata/skill/big_skill_2.png}" alt="big_skill 이미지2" class="radius2 curri_img mr_05"/>
+              </div>
+              <div class="curri_img_box">
+                  <img th:src="@{/picture/bigdata/skill/big_skill_3.png}" alt="big_skill 이미지3" class="radius2 curri_img mr_05"/>
+              </div>
+              <div class="curri_img_box">
+                  <img th:src="@{/picture/bigdata/skill/big_skill_4.png}" alt="big_skill 이미지4" class="radius2 curri_img mr_05"/>
+              </div>
+              <div class="curri_img_box">
+                  <img th:src="@{/picture/bigdata/skill/big_skill_5.png}" alt="big_skill 이미지5" class="radius2 curri_img mr_05"/>
+              </div>
+              <div class="curri_img_box">
+                  <img th:src="@{/picture/bigdata/skill/big_skill_6.png}" alt="big_skill 이미지6" class="radius2 curri_img mr_05"/>
+              </div>
+              <div class="curri_img_box">
+                  <img th:src="@{/picture/bigdata/skill/big_skill_7.png}" alt="big_skill 이미지7" class="radius2 curri_img mr_05"/>
+              </div>
+              <div class="curri_img_box">
+                  <img th:src="@{/picture/bigdata/skill/big_skill_8.png}" alt="big_skill 이미지8" class="radius2 curri_img mr_05"/>
+              </div>
+              <div class="curri_img_box">
+                  <img th:src="@{/picture/bigdata/skill/big_skill_9.png}" alt="big_skill 이미지9" class="radius2 curri_img mr_05"/>
+              </div>
+              <div class="curri_img_box">
+                  <img th:src="@{/picture/bigdata/skill/big_skill_10.png}" alt="big_skill 이미지10" class="radius2 curri_img mr_05"/>
+              </div>
+              <div class="curri_img_box">
+                  <img th:src="@{/picture/bigdata/skill/big_skill_11.png}" alt="big_skill 이미지11" class="radius2 curri_img mr_05"/>
+              </div>
+              <div class="curri_img_box">
+                  <img th:src="@{/picture/bigdata/skill/big_skill_12.png}" alt="big_skill 이미지12" class="radius2 curri_img mr_05"/>
+              </div>
+              <div class="curri_img_box">
+                  <img th:src="@{/picture/bigdata/skill/big_skill_13.png}" alt="big_skill 이미지13" class="radius2 curri_img mr_05"/>
+              </div>
+              <div class="curri_img_box">
+                  <img th:src="@{/picture/bigdata/skill/big_skill_14.png}" alt="big_skill 이미지14" class="radius2 curri_img mr_05"/>
+              </div>
+              <div class="curri_img_box">
+                  <img th:src="@{/picture/bigdata/skill/big_skill_15.png}" alt="big_skill 이미지15" class="radius2 curri_img mr_05"/>
+              </div>
+              <div class="curri_img_box">
+                  <img th:src="@{/picture/bigdata/skill/big_skill_16.png}" alt="big_skill 이미지16" class="radius2 curri_img mr_05"/>
+              </div>
+            </div>
+          </div>
+            <div class="curri_box">
+              <div class="curri_content border_dashed">
+                <p class="dt_btn_2">1개월차</p>
+                <div class="curri_sub_text">
+                <p>IT 기술 기초 / IT 서비스 기초 / 프로그래밍 기초 / 데이터 분석 기초 / 최신 IT 기술 이해 / Git & Github</p>
+              </div>
+              </div>
+              <div class="curri_content border_dashed">
+                <p class="dt_btn_2">2개월차</p>
+                <div class="curri_sub_text">
+                <p>AWS / 머신러닝 / 데이터 마이닝 / Phython 데이터 분석 / 데이터 수집 프로젝트(입문)</p>
+              </div>
+              </div>
+              <div class="curri_content border_dashed">
+                <p class="dt_btn_2">3개월차</p>
+                <div class="curri_sub_text">
+                <p>딥러닝 / 음성처리 / 이미지 처리 / MLOps</p>
+              </div>
+              </div>
+              <div class="curri_content border_dashed">
+                <p class="dt_btn_2">4개월차</p>
+                <div class="curri_sub_text">
+                <p>자연어 처리 입문 / 개발 파이프라인 구축 / AWS 서비스 인프라 구축 / IT 서비스 개발(실전) / AI프로젝트(실전)</p>
+              </div>
+              </div>
+              <div class="curri_content">
+                <p class="dt_btn_2">5, 6개월차</p>
+                <div class="curri_sub_text">
+                <p>프로젝트 최종 개발 및 결과보고 / 천재그룹 인턴 지원 및 발령 / 인턴기간 3개월</p>
+              </div>
+              </div>
+          </div>
+        </section>
+        <!-- 커리큘럼 end -->
+
+        <!-- 포트폴리오 start -->
+        <section class="container container_bottom">
+          <div class="hero-body">
+            <div class="container has-text-centered">
+              <h4 class="small_title">PORTFOLIO</h4>
+              <h1 class="title_white_big title_sub_1">실무 관련 프로젝트 하고, <br> 현업에 빠르게 적응하세요</h1>
+            </div>
+          </div>
+          <div class="port_box">
+            <div class="is-multiline display_block">
+              <ul class="font_white">
+                <li class="talent_subtitle_4"><div class="index_figure_5">
+                  <img th:src="@{/ico/ico-portfolio.png}" alt="포트폴리오 이미지" class="curri_ico"/>
+                </div>포트폴리오 01
+                </li>
+              </ul>
+              <div class="column">
+                <div class="category">
+                  <h1 class="title is-5 btn text_center">
+                    한자 낱글자 인식 OCR
+                  </h1>
+                  <ul class="font_white">
+                    <li><div class="index_figure_5">
+                      <img th:src="@{/ico/ico-checkbox.png}" alt="체크박스 이미지" class="curri_ico"/>
+                  </div>
+                      초등학교 한자 공부 능률 향상을 위한 한자 인식 모델 개발
+                      목표
+                    </li>
+                    <li><div class="index_figure_5">
+                      <img th:src="@{/ico/ico-checkbox.png}" alt="체크박스 이미지" class="curri_ico"/>
+                  </div>
+                      현재 서비스 중인 밀크T아이의 기초 한자 서비스를 미러링
+                    </li>
+                    <li><div class="index_figure_5">
+                      <img th:src="@{/ico/ico-checkbox.png}" alt="체크박스 이미지" class="curri_ico"/>
+                  </div>
+                      학생들이 입력한 필기체를 알맞은 한자로 분류할 수 있는
+                      모델을 설계하는 것
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="is-12 post-img">
+                <div class="flex_between">
+                  <article class="columns is-multiline">
+                    <div class="column is-12 post-img">
+                      <img th:src="@{/picture/pm/pmport_9.png}" alt="pm 포트폴리오3"/>
+                    </div>
+                  </article>
+                  <article class="columns is-multiline">
+                    <div class="column is-12 post-img">
+                      <img th:src="@{/picture/pm/pmport_9.png}" alt="pm 포트폴리오3"/>
+
+                    </div>
+                  </article>
+                </div>
+                <article class="columns is-multiline">
+                  <div class="column is-12 post-img">
+                    <img th:src="@{/picture/pm/pmport_9.png}" alt="pm 포트폴리오3"/>
+
+                  </div>
+                </article>
+              </div>
+            </div>
+            <div class="is-multiline display_block">
+              <ul class="font_white">
+                <li class="talent_subtitle_4"><div class="index_figure_5">
+                  <img th:src="@{/ico/ico-portfolio.png}" alt="포트폴리오 이미지" class="curri_ico"/>
+                </div>포트폴리오 02
+                </li>
+              </ul>
+              <div class="column">
+                <div class="category">
+                  <h1 class="title is-5 btn2 text_center">
+                    인터넷 강의의 언어적 차이 분석
+                  </h1>
+                  <ul class="font_white">
+                    <li><div class="index_figure_5">
+                      <img th:src="@{/ico/ico-checkbox.png}" alt="체크박스 이미지" class="curri_ico"/>
+                  </div>
+                      Why Isn't My Custom Profile Data Showing on My Tickets?
+                    </li>
+                    <li><div class="index_figure_5">
+                      <img th:src="@{/ico/ico-checkbox.png}" alt="체크박스 이미지" class="curri_ico"/>
+                  </div>Why Won't My Gmail SMTP Settings Work?</li>
+                    <li><div class="index_figure_5">
+                      <img th:src="@{/ico/ico-checkbox.png}" alt="체크박스 이미지" class="curri_ico"/>
+                  </div>Is There a Customer Portal My Users Can Log in To?</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="is-12 post-img">
+                <div class="flex_between">
+                  <article class="columns is-multiline">
+                    <div class="column is-12 post-img">
+                      <img th:src="@{/picture/pm/pmport_9.png}" alt="pm 포트폴리오3"/>
+
+                    </div>
+                  </article>
+                  <article class="columns is-multiline">
+                    <div class="column is-12 post-img">
+                      <img th:src="@{/picture/pm/pmport_9.png}" alt="pm 포트폴리오3"/>
+
+                    </div>
+                  </article>
+                </div>
+                <article class="columns is-multiline">
+                  <div class="column is-12 post-img">
+                    <img th:src="@{/picture/pm/pmport_9.png}" alt="pm 포트폴리오3"/>
+
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- 포트폴리오 end -->
+        <th:block th:replace="sub/sub_inclulde/mentoring :: mentoring"></th:block>
+
+      </section>
+      <!-- 육각형 start -->
+      <div class="container_reverse2 back_lightgray">
+        <section class="container_reverse2 container_bottom back_lightgray">
+          <div class="hero-body">
+            <div class="container_reverse2 has-text-centered back_lightgray">
+              <h1 class="title_big">6개월 뒤 꽉찬 6각형 주니어로 성장하기!</h1>
+              </p>
+            </div>
+          </div>
+          <div class="six_box">
+            <img th:src="@{/picture/bigdata/six.png}" alt="육각형 이미지" class="radius2"/>
+          </div>
+        </section>
+      </div>
+      <!-- 육각형 end -->
+      <section class="container">
+
+  <!-- 취업 분야는 start -->
+  <section class="container container_bottom">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title_white_big">수료 후 취업 분야는?</h1>
+      </div>
+    </div>
+    <div class="job_box flex_center">
+      <div class="job_wrap">
+    <div class="job_1">
+      <div class="job_image">
+        <img th:src="@{/picture/bigdata/employment_1.png}" alt="bigdata 취업분야1"/>
+    </div>
+    <div class="job_subtitle font_white">
+      <h4>데이터 분석가</h4>
+    </div>
+    </div>
+    <div class="job_2">
+      <div class="job_image">
+        <img th:src="@{/picture/bigdata/employment_2.png}" alt="bigdata 취업분야2"/>
+    </div>
+    <div class="job_subtitle font_white">
+      <h4>데이터 엔지니어</h4>
+    </div>
+    </div>
+    <div class="job_3">
+      <div class="job_image">
+        <img th:src="@{/picture/bigdata/employment_3.png}" alt="bigdata 취업분야3"/>
+    </div>
+    <div class="job_subtitle font_white">
+      <h4>AI 서비스 개발자</h4>
+    </div>
+    </div>
+    <div class="job_4">
+      <div class="job_image">
+        <img th:src="@{/picture/bigdata/employment_4.png}" alt="bigdata 취업분야4"/>
+    </div>
+    <div class="job_subtitle font_white">
+      <h4>데이터를 사용하는<br>모든 직무</h4>
+    </div>
+    </div>
+  </div>
+  </div>
+</section>
+<!-- 취업 분야는 end -->
+
+        <th:block th:replace="sub/sub_inclulde/procedure :: procedure"></th:block>
+
+        <th:block th:replace="sub/sub_inclulde/eduplace :: eduplace"></th:block>
+        <th:block th:replace="sub/sub_inclulde/digital_tran :: digital_tran"></th:block>
+      </section>
+    </div>
+  <script th:src="@{/static/js/slide.js}"></script>
+
+    <th:block th:replace="include/footer :: footer"></th:block>
+
+  </body>
+</html>

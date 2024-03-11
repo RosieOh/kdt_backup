@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta
+            content="minimum-scale=1.0, width=device-width, maximum-scale=1, ser-scalable=no"
+            name="viewport"
+    />
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Topic Listing Bootstrap 5 Template</title>
+<th:block th:replace="~{include/head :: head}"></th:block>
+</head>
+
+<body style="min-height: 100vh;">
+    <th:block th:replace="~{include/header :: header}"></th:block>
+
+    <section class="page-title" style="padding-top: 60px; ">
+        <nav class="breadcrumb has-succeeds-separator is-medium is-right mt-3 p-4" style="background: #f1f4f9; height: 150px;" aria-label="breadcrumbs">
+            <ul class="mr-5">
+                <li><a th:href="@{/}"><i class="xi-home is-size-3"></i>홈</a></li>
+                <li><a th:href="@{/member/login}">로그인</a></li>
+            </ul>
+            <p class="title has-text-centered mt-1 mb-2">로그인</p>
+        </nav>
+    </section>
+
+    <div class="login-wrapper" style="margin: 0 auto; padding-top: 50px; min-height: 70vh;">
+        <h2 style="text-align: center;">Login</h2>
+        <form th:action="@{/loginPro}" method="post" id="login-form">
+            <input type="text" name="email" placeholder= "이메일을 입력해주세요" autocomplete="off" required style="background-color: #F8F8F8;">
+            <input type="password"  name="pw" placeholder="비밀번호를 입력해주세요" autocomplete="off" required style="background-color: #F8F8F8;">
+            <div th:if="${param.error}">
+                <p style="color:red">아이디 또는 비밀번호가 올바르지 않거나 <br> 가입이 되지 않았습니다.</p>
+            </div>
+            <div th:if="${param.authError}">
+                <p style="color:blue">토큰 정보가 만료되었습니다. 토큰을 갱신하시기 바랍니다.</p>
+            </div>
+            <label for="remember-check">
+                <input type="checkbox" id="remember-check">아이디 저장하기
+            </label>
+            <input type="submit" value="Login">
+                <p class="d-flex justify-content-center mt-3"> 회원이 아니신가요? &nbsp; <a th:href="@{/member/join}" class="text-secondary"> 회원가입하기 </a></p>
+        </form>
+    </div>
+
+    <!-- ======= Footer ======= -->
+    <th:block th:replace="~{include/footer :: footer}"></th:block>
+    <!-- End Footer -->
+</body>
+</html>

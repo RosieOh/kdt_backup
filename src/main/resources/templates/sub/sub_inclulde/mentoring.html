@@ -1,0 +1,41 @@
+<!doctype html>
+<html
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+>
+  <body>
+    <th:block th:fragment="mentoring">
+      <!-- 현직자의 멘토링 start -->
+      <section class="container container_bottom">
+        <div class="hero-body">
+          <div class="container has-text-centered">
+            <h4 class="small_title_2">MEMTORING</h4>
+            <h2 class="title_white_big">POINT 03 현직자의 멘토링<br/> </h2>
+            <h4 class="font_white">현직자 멘토의 집중 멘토링으로 실무자의 시각에서 프로젝트를 회고할 수 있어요!<br>
+              현직자 멘토링과 네트워킹 데이를 통해 커리어 고민을 나누고 성장의 기회를 잡으세요</h4>
+          </div>
+        </div>
+        <div class="slide_d slide_d_wrap">
+          <div class="slide_d_item">
+            <img th:src="@{/picture/common/mentoring_1.png}" alt="멘토링 이미지1"/>
+          </div>
+          <div class="slide_d_item">
+            <img th:src="@{/picture/common/mentoring_2.png}" alt="멘토링 이미지2" />
+          </div>
+          <div class="slide_d_item">
+            <img th:src="@{/picture/common/mentoring_3.png}" alt="멘토링 이미지3" />
+          </div>
+          <div class="slide_d_item">
+            <img th:src="@{/picture/common/mentoring_4.png}" alt="멘토링 이미지4" />
+          </div>
+          <ul class="slide_d_pagination_d"></ul>
+        </div>
+        <div class="button_wrap">
+          <div class="slide_d_prev_dutton slide_button">◀</div>
+          <div class="slide_d_next_dutton slide_button">▶</div>
+        </div>
+      </section>
+      <!-- 현직자의 멘토링 end -->
+    </th:block>
+  </body>
+</html>

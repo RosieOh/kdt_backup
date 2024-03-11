@@ -1,0 +1,238 @@
+@charset "UTF-8";
+/* abc 순으로 기입 */
+@import url("ImportCSS/apply.css");
+@import url("ImportCSS/bulma.css");
+@import url("ImportCSS/faq.css");
+@import url("ImportCSS/font.css");
+@import url("ImportCSS/index.css");
+@import url("ImportCSS/member.css");
+@import url("ImportCSS/modify.css");
+@import url("ImportCSS/sign.css");
+@import url("ImportCSS/subSign.css");
+@import url("ImportCSS/subject.css");
+@import url("ImportCSS/board.css");
+@import url("ImportCSS/breadcrumb.css");
+
+:root {
+  --c-main: rgba(85, 59, 243, 1);
+  --c-sub: rgba(118, 123, 255, 1);
+  --c-sub2: #d8d9ff;
+  --c-sub3: rgba(118, 123, 255, 0.4);
+  --c-hover: #402eb8;
+  --c-back_lightgray: rgba(221, 221, 221, 1);
+  --c-back_black: rgba(41, 41, 41, 1);
+  --c-back_darkgray: rgba(74, 74, 74, 1);
+  --c-back_gray: rgba(136, 136, 136, 1);
+  --c-black: rgba(51, 51, 51, 1);
+  --c-black_2: rgba(41, 41, 41, 1);
+  --c-white: white;
+  --c-white_2: rgba(248, 248, 248, 1);
+  --c-white_ob: rgba(255, 255, 255, 0.3);
+  --border_radius: 30px;
+}
+
+/* 공통 사항 */
+
+.red {
+  border: 1px red solid;
+}
+
+.main {
+  background-color: var(--c-back_black);
+  padding-top: 4rem;
+}
+.main2 {
+  background-color: var(--c-white);
+  padding-top: 4rem;
+}
+.main3 {
+  background-color: var(--c-back_lightgray);
+  padding-top: 4rem;
+}
+
+.container {
+  background-color: var(--c-back_black);
+}
+
+.container_reverse {
+  background-color: var(--c-white);
+  position: relative;
+  width: 100vw;
+}
+
+.container_bottom {
+  margin-bottom: 10rem;
+}
+
+.last_container {
+  padding-bottom: 20rem;
+}
+
+/*.container {*/
+/*  margin: 0.5rem auto;*/
+/*}*/
+
+.hero-body .container {
+  padding: 0.5rem;
+  margin-bottom: 3rem;
+  max-width: 100%;
+}
+
+.radius {
+  border-radius: 20px;
+  margin: 0 0.5rem;
+}
+
+.radius1 {
+  border-radius: 10px;
+}
+
+.radius2 {
+  border-radius: 20px;
+}
+
+.inline_block {
+  display: flex;
+}
+
+.back_black {
+  background-color: var(--c-back_black);
+}
+
+.back_lightgray {
+  background-color: var(--c-back_lightgray);
+}
+
+.back_gray {
+  background-color: var(--c-back_gray);
+}
+
+.back_darkgray {
+  background-color: var(--c-back_darkgray);
+}
+
+.back_white {
+  background-color: var(--c-white) !important;
+}
+
+.back_none {
+  background-color: transparent;
+}
+
+.flex_around {
+  display: flex;
+  justify-content: space-around;
+}
+
+.flex_between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex_center {
+  display: flex;
+  justify-content: center;
+}
+.flex_column {
+  display: flex;
+  flex-direction: column;
+}
+
+.width {
+  width: 100%;
+}
+.width_vw {
+  width: 100vw;
+}
+
+.width_50 {
+  width: 50%;
+}
+
+.width_33 {
+  width: 33.33%;
+}
+
+@media screen and (max-width: 930px) {
+  .width_50 {
+    width: 100%;
+  }
+
+  .width_33 {
+    width: 100%;
+  }
+
+  .flex_around {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.75rem;
+  }
+
+  .flex_between {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.75rem;
+  }
+
+  .flex_center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.75rem;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .change_width {
+    width: 100%;
+  }
+}
+
+.font_white {
+  color: var(--c-white);
+}
+
+.font_main_1 {
+  color: var(--c-main);
+}
+
+.font_gray {
+  color: var(--c-back_gray);
+}
+.font_darkgray {
+  color: var(--c-back_darkgray);
+}
+
+.font_weight_700 {
+  font-weight: 700;
+}
+
+.margin_top_6r {
+  margin-top: 6rem;
+}
+.mr_05 {
+  margin-right: 0.5rem;
+}
+.mt_8 {
+  margin-top: 8rem;
+}
+
+.border_dashed {
+  border-color: var(--c-back_lightgray);
+  border-style: dashed;
+  border-width: 0 0 1px;
+}
+
+.border_gray {
+  border: 1px solid var(--c-back_gray);
+}
+
+.text_center {
+  text-align: center;
+}
+
+.text_right {
+  text-align: right;
+}

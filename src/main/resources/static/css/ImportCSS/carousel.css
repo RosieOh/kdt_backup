@@ -1,0 +1,15 @@
+.carousel-wrapper {
+    width: 500px;
+    height: 300px;
+}
+
+.carousel-wrapper > .carousel {
+    display: flex;
+    transform: translate3d(0, 0, 0);
+    transition: transform 0.2s;
+}
+
+.carousel-wrapper > .carousel > img {
+    width: 500px;
+    height: 300px;
+}

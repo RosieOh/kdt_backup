@@ -1,0 +1,36 @@
+@charset "UTF-8";
+/* complete_apply */
+
+.complete_box {
+  width: 400px;
+  height: 400px;
+  border: 1px solid black;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.complete_image {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -50%);
+  background-color: #31c97b;
+  background-size: cover;
+  font-weight: bold;
+  color: white;
+  font-size: 50px;
+}
+
+.complete_text {
+  width: 255px;
+  position: absolute;
+  left: 50%;
+  top: 75%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  font-weight: bold;
+}

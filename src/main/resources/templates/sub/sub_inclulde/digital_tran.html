@@ -1,0 +1,73 @@
+<!doctype html>
+<html
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+>
+  <body>
+    <th:block th:fragment="digital_tran">
+
+      <!-- Digital Transformation start -->
+      <section class="container last_container">
+        <div class="hero-body">
+          <div class="container has-text-centered">
+            <h1 class="title_white_big title_sub_1">대한민국 1위 교육 • 출판기업에서 <br>
+              Digital Transformation</h1>
+            </p>
+          </div>
+        </div>
+        <div class="columns is-multiline">
+          <div class="column width_50 multiline_box_1">
+            <article class="notification back_darkgray">
+              <div class="media-content_350">
+                <div class="content">
+                  <p class="dt_btn">미래산업 성장 가치</p>
+                  <p class="benefit_sub_2 font_white">
+                    국내 에듀테크 시장 예상 성장, <br/>
+                    <strong>2025년 약 10조원 규모!</strong>
+                  </p>
+                  <p class="benefit_sub_2 font_white">
+                    2025년 AI 디지털 교과서 도입으로 에듀테크 산업은 <br>더욱 성장할 전망입니다.
+                  </p>
+                  <p class="benefit_sub_2 font_white">
+                    대한민국 대표 에듀테크 기업인 천재교육그룹은 <br/>
+                    함께 성장할 인재를 찾고 있습니다.
+                  </p>
+                </div>
+                <div class="index_figure">
+                  <figure class="media-left">
+                      <span class="icon_2 has-text-grey">
+                      <img th:src="@{/ico/ico-company.png}" alt="ico company" class="radius2"/>
+                      </span>
+                  </figure>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="column width_50 multiline_box_1">
+            <article class="notification back_darkgray">
+              <div class="media-content_350">
+                <div class="content">
+                  <p class="dt_btn">에듀테크 인재 양성 교육</p>
+                  <p class="benefit_sub_2 font_white">
+                    <strong>천재IT교육센터</strong>는<br/>
+                    교육의 가치를 함께 이해하고, 대한민국의 교육의 미래를<br>
+                    함께 만들어갈 에듀테크 인재를 직접 양성하는 곳입니다.
+                  </p>
+                </div>
+                <div class="index_figure">
+                  <figure class="media-left">
+                      <span class="icon_2 has-text-grey">
+                        <img th:src="@{/ico/ico-company2.png}" alt="ico company2" class="radius2"/>
+                      </span>
+                  </figure>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <!-- Digital Transformation end -->
+
+    </th:block>
+  </body>
+</html>

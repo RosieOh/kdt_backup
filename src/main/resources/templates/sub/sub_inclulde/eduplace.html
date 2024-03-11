@@ -1,0 +1,53 @@
+<!doctype html>
+<html
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+>
+  <body>
+    <th:block th:fragment="eduplace">
+
+      <!-- 교육시설 start -->
+      <section class="container container_bottom">
+        <div class="hero-body">
+          <div class="container has-text-centered">
+            <h1 class="title_white_big title_sub_1">천재IT교육센터의 교육시설</h1>
+            <p class="subtitle_white text_left">교육에만 몰두할 수 있어요!</p>
+            </p>
+          </div>
+        </div>
+        <div class="columns is-multiline">
+          <div class="Ladder">
+            <div class="Ladder_1 radius2">
+              <p class="dt_btn absolute_right">강의실 01</p>
+              <article class="columns is-multiline ">
+                <img th:src="@{/picture/common/classroom_1.jpg}" alt="강의실 이미지1" class="radius2"/>
+              </article>
+            </div>
+            <div class="Ladder_2 radius2">
+              <p class="dt_btn absolute_right">라운지 공간</p>
+              <article class="columns is-multilin">
+                <img th:src="@{/picture/common/lounge.jpg}" alt="라운지 이미지" class="radius2"/>
+              </article>
+            </div>
+          </div>
+          <div class="Ladder">
+            <div class="Ladder_3 radius2">
+              <p class="dt_btn absolute_right">강의실 02</p>
+              <article class="columns is-multiline ">
+                <img th:src="@{/picture/common/classroom_2.jpg}" alt="강의실 이미지2" class="radius2"/>
+              </article>
+            </div>
+            <div class="Ladder_4 radius2">
+              <p class="dt_btn absolute_right">세미나실</p>
+              <article class="columns is-multiline ">
+                <img th:src="@{/picture/common/seminar.jpg}" alt="세미나 이미지" class="radius2"/>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 교육시설 end -->
+
+    </th:block>
+  </body>
+</html>

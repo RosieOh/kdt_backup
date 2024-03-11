@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <body>
+    <th:block th:fragment="footer">
+      <footer class="ft" id="ft">
+        <div class="ft_wrap">
+          <div class="ft_wrap_text">
+            <p class="copyright ">
+              <span>(주)천재교육 &nbsp;|&nbsp; 서울특별시 디지털로 9길 23 마리오아울렛2관 11층 천재IT교육센터</span>
+            </p>
+            <p class="copyright">
+              <span>접수 문의 · 사이트 이용 문의 : 02-3282-8589 &nbsp;|&nbsp;  이메일 : genia@chunjae.co.kr</span>
+            </p>
+            <br/>
+            <p class="cp">
+              COPYRIGHT 2023 Chunjae EDUCATION INC. ALL RIGHTS RESERVED.
+            </p>
+          </div>
+          <div class="cp_img"><img class="ft_logo" th:src="@{/picture/common/chunjaelogo.png}" alt="천재교육 logo"></div>
+        </div>
+      </footer>
+    </th:block>
+  </body>
+</html>

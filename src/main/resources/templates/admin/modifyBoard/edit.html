@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="//cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <title>수정 요청</title>
+    <th:block th:replace="~{include/head :: head}"></th:block>
+
+</head>
+<body id="top">
+<main>
+    <th:block th:replace="~{include/header :: header}"></th:block>
+
+    <section class="page-title" style="padding: 100px 0;">
+        <nav class="breadcrumb has-succeeds-separator is-medium is-right mt-3 p-4 breadcrumb_1" aria-label="breadcrumbs">
+            <ul class="mr-5">
+                <li><a th:href="@{/static}"><i class="xi-home is-size-3"></i>홈</a></li>
+                <li><a th:href="@{/templates/admin/modifyBoard/list}">수정요청</a></li>
+            </ul>
+            <p class="title has-text-centered mt-1 mb-2">수정요청</p>
+        </nav>
+    </section>
+
+    <section id="pricing" class="pricing" style="padding-top: 100px;">
+        <div class="container back_white" data-aos="fade-up">
+            <div class="col-lg-12" data-aos="fade-up" data-aos-delay="200">
+                <div class="pricing-item featured" style="padding:0;">
+                    <form th:action="@{/templates/admin/modifyBoard/modify}" method="post">
+                        <div class="col-12">
+                            <div class="card w-100">
+                                <div class="card-body">
+                                    <div class="table-responsive project-list">
+                                        <table class="table project-table table-centered table-nowrap" style="border: none;">
+                                            <tbody>
+                                            <tr>
+                                                <td style="border: none;">
+                                                    <input class="input" id="title" type="text" th:field="*{boardDTO.title}" required placeholder="제목">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="border: none;">
+                                                    <div id="editor">
+                                                        <textarea class="input" id="content" type="text" th:utext="${boardDTO.content}" required th:name="content" placeholder="내용"></textarea>
+                                                    </div>
+                                                    <script>
+                                                        const Editor = toastui.Editor;
+                                                        const textarea = document.querySelector('#myTextarea');
+
+                                                        // 숨겨진 textarea 대신에 에디터를 생성할 div 요소를 만듭니다.
+                                                        const editorDiv = document.createElement('div');
+                                                        editorDiv.id = 'editor';
+                                                        textarea.parentNode.insertBefore(editorDiv, textarea);
+                                                        textarea.style.display = 'none';  // 숨겨진 textarea
+
+                                                        const editor = new Editor({
+                                                            el: editorDiv,
+                                                            height: '500px',
+                                                            initialEditType: 'markdown',
+                                                            previewStyle: 'vertical',
+                                                            initialValue: textarea.value  // 초기값을 textarea의 값으로 설정
+                                                        });
+
+                                                        // 에디터의 내용이 변경될 때마다 textarea에 값을 업데이트합니다.
+                                                        editor.on('change', () => {
+                                                            textarea.value = editor.getMarkdown();
+                                                        });
+                                                    </script>
+                                                </td>
+                                            </tbody>
+                                            <div class="input-group mb-3">
+                                                <select name="boardType" id="boardType">
+                                                    <option value="NOTICE" th:selected="${boardType == 'MODIFY'}">수정요청</option>
+                                                </select>
+                                            </div>
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text">작성자</span>
+                                                <input type="text" class="form-control"  th:value="${name}" readonly>
+                                            </div>
+                                        </table>
+                                        <div class="btn_group">
+                                        <input type="submit" value="수정하기" class="btn btn-primary" />
+                                            <button type="submit">수정</button>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-group float-right mr-3" style="float:right;">
+                            <input type="submit" id="btn" class="btn btn-dark" style="height: 100%; " value="등록">
+                        </div>
+                    </form>
+                    <div class="btn_group">
+                        <input type="submit" value="수정하기" class="btn btn-primary" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<th:block th:replace="~{include/footer :: footer}"></th:block>
+
+</body>
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta
+            content="minimum-scale=1.0, width=device-width, maximum-scale=1, ser-scalable=no"
+            name="viewport"
+    />
+    <title>교육신청 폼</title>
+    <th:block th:replace="include/head :: head" ></th:block>
+</head>
+<body>
+<th:block th:replace="include/header :: header" ></th:block>
+<div class="main3" id="banner">
+    <section class="container back_lightgray">
+        <div class="subSign_form">
+            <div class="subSign_title">
+                <h1>교육 신청</h1>
+            </div>
+            <div class="field">
+                <h3>[천재교육] 천재IT교육센터 지원서</h3>
+                <p>
+                    해당 양식은 천재교육에서 운영하는 천재IT교육센터의 지원서입니다. <br></p>
+                <p>저희 천재IT교육센터는 학습에 대한 강한 의지와 매일의 학습을 꾸준하게 이어가는 실천력을 가진 분과 <br>함께하고자 합니다. 새로운 커리어를 위한 도전을 <strong>천재IT교육센터</strong>와 함께 하세요! </p>
+                <br>
+                <br>
+                <br>
+                <p>
+                <h3>※ 알려드립니다!</h3>
+                - 학력, 경력 등의 정보는 정보 수집용일 뿐 합격 여부와는 무관합니다. <br>
+                - 신청서 기재 내용이 허위로 판명될 경우 합격이 취소되거나 추후 인턴 또는 채용 전환 시 합격 취소가 되실 수 있습니다. <br>
+                - 지원서를 통해 취득한 개인정보는 지원과 선발 절차, 교육 과정 입과 단계에서만 이용될 것을 알려드립니다.
+                <br>
+                <br>
+                </p>
+            </div>
+            <form th:action="@{/subject/register}" method="post">
+                <div class="field">
+                    <label class="label">교육과정<em>*</em></label>
+                    <div class="control">
+                        <label><input class="" type="radio" name="course" value="FULLSTACK" /><span>풀스택(java)</span></label>
+                        <label><input class="" type="radio" name="course" value="BIGDATA" /><span>빅데이터</span></label>
+                        <label><input class="" type="radio" name="course" value="PM" /><span>PM</span></label>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">이름<em>*</em></label>
+                    <div class="control">
+                        <input class="input" type="text" name="name" placeholder="홍길동" />
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">연령대<em>*</em></label>
+                    <div class="control">
+                        <label><input class="" type="radio" name="age" value="10대~20대" /><span>10대 ~ 20대</span></label>
+                        <label><input class="" type="radio" name="age" value="20대~30대"/><span>20대 ~ 30대</span></label>
+                        <label><input class="" type="radio" name="age" value="30대~40대"/><span>30대 ~ 40대</span></label>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">연락처<em>*</em></label>
+                    <div class="control">
+                        <input class="input" type="number" name="tel" placeholder="010-0000-0000"/>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">이메일<em>*</em></label>
+                    <div class="control">
+                        <input class="input" type="text" name="email" placeholder="chunjae@chunjae.co.kr" />
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">추천 전형 여부를 체크해주세요.<em>*</em></label>
+                    <div class="control">
+                        <label><input class="" type="radio" name="recomment" value="비해당" /><span>비해당</span></label>
+                        <label><input class="" type="radio" name="recomment" value="대학교 취업지원센터" /><span>대학교 취업지원센터</span></label>
+                        <label><input class="" type="radio" name="recomment" value="학과장 및 사범대학" /><span>학과장 및 사범대학</span></label>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">최종학력을 체크해주세요.<em>*</em></label>
+                    <div class="control">
+                        <label><input class="" type="radio" name="degree" value="고등학교 졸업" /><span>고등학교 졸업</span></label>
+                        <label><input class="" type="radio" name="degree" value="대학교 졸업 예정" /><span>대학교 졸업 예정</span></label>
+                        <label><input class="" type="radio" name="degree" value="대학교 졸업" /><span>대학교 졸업</span></label>
+                        <label><input class="" type="radio" name="degree" value="대학원 졸업 예정" /><span>대학원 졸업 예정</span></label>
+                        <label><input class="" type="radio" name="degree" value="대학원 졸업" /><span>대학원 졸업</span></label>
+                        <label><input class="" type="radio" name="degree" value="기타" /><span>기타</span></label>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">최종 졸업(혹은 졸업예정) 학교 및 전공명을 기재해주세요.<em>*</em>
+                        <p >*자료 수집용일 뿐, 선발 심사에는 반영되지 않습니다.</p>
+                    </label>
+                    <div class="control">
+                        <input class="input" type="text" name="graduation_degree" placeholder="천재대학교/교육학과 "/>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">국민내일배움카드를 소지하고 계신가요?<em>*</em><p>*내일배움카드 없이도 접수는 가능하지만, 교육 시작일 전까지 국민내일배움카드 발급 및 수령 완료해야 합니다.</p></label>
+                    <div class="control">
+                        <label><input class="" type="radio" name="studen_card" value="예" /><span>예</span></label>
+                        <label><input class="" type="radio" name="studen_card" value="아니오" /><span>아니오</span></label>
+                        <label><input class="" type="radio" name="studen_card" value="발급 받는 중이에요." /><span>발급 받는 중이에요.</span></label>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">국민취업지원제도 참여 경험이 있으신가요?<em>*</em></label>
+                    <div class="control">
+                        <label><input class="" type="radio" name="workup" value="2년 이내 참여한 적 있어요." /><span>2년 이내 참여한 적 있어요.</span></label>
+                        <label><input class="" type="radio" name="workup" value="참여 중이에요." /><span>참여 중이에요</span></label>
+                        <label><input class="" type="radio" name="workup" value="신청 중이에요" /><span>신청 중이에요</span></label>
+                        <label><input class="" type="radio" name="workup" value="참여한 적 없어요" /><span>참여한 적 없어요</span></label>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">기존 K-Digital Training 과정을 수강하신 적이 있으신가요?<em>*</em><p>*K-Digital Training 과정은 5년간 1번 지원받을 수 있으므로, 교육비 전액의 자부담이 발생할 수 있습니다.</p></label>
+                    <div class="control">
+                        <label><input class="" type="radio" name="kdt_process" value="예" /><span>예</span></label>
+                        <label><input class="" type="radio" name="kdt_process" value="아니오" /><span>아니오</span></label>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">코딩 경험 여부를 알려주세요.<em>*</em><p>*코딩 공부 경험시간을 포함한 경험을 입력해주세요.</p></label>
+                    <div class="control">
+                        <label><input class="" type="radio" name="coding_experience" onclick="this.form.coding_experience_text.disabled=true" value="없음" /><span>없음</span></label>
+                        <label><input class="" type="radio" name="coding_experience" onclick="this.form.coding_experience_text.disabled=true" value="1년 미만" /><span>1년 미만</span></label>
+                        <label><input class="" type="radio" name="coding_experience" onclick="this.form.coding_experience_text.disabled=true" value="1 ~ 3년" /><span>1 ~ 3년</span></label>
+                        <label><input class="" type="radio" name="coding_experience" onclick="this.form.coding_experience_text.disabled=true" value="3년 이상" /><span>3년 이상</span></label>
+                        <label><input class="" type="radio" name="coding_experience" onclick="this.form.coding_experience_text.disabled=false" value="기타" /><span>기타</span><input class="label_input" type="text" name="coding_experience_text" disabled/></label>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">지원 동기와 취업 목표에 대해 기재해주세요. (250자 이상)<em>*</em>
+                        <div class="paper">
+                            <h5>
+                                >> 작성 내용이 고민된다면 아래 가이드를 참고하세요!
+                                <a href="javascript:;" class="toggle">▼ 내용보기</a>
+                            </h5>
+                            <div class="scroll_wrap">
+                                <div class="scrollBox">
+                                    <h5>- 데이터 분야에 대한 관심과 경험이 있나요?</h5>
+                                    <h5>- 교육 산업에 대한 관심과 경험이 있나요?</h5>
+                                    <h5>- 데이터 서비스 개발자로서의 강한 의지와 직무적 자기계발 계획</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                    <div class="control">
+                        <textarea class="textarea" id="paperText1" name="paper1"></textarea>
+                        <div class="textCount" id="paperCount1"><span>0</span>/250</div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">자신이 보유한 역량 및 강점에 대해 기재해주세요. <br>
+                        해당 과정을 들으며 필요하다고 생각하는 역량 및 강점을 서술해도 좋아요! (250자 이상)<em>*</em>
+                        <div class="paper">
+                            <h5>
+                                >> 작성 내용이 고민된다면 아래 가이드를 참고하세요!
+                                <a href="javascript:;" class="toggle">▼ 내용보기</a>
+                            </h5>
+                            <div class="scroll_wrap">
+                                <div class="scrollBox">
+                                    <h5>- 본인의 장점을 기업이 어떻게 활용할 수 있을지 작성해보세요. </h5>
+                                    <h5>- 해당 직무 역량을 얻기 위한 본인의 노력과 성과를 데이터나 수치를 근거로 작성해보세요.</h5>
+                                    <h5>- 데이터 분야 교육 경험이나 업무 경험에 자신의 전공, 성격, 기술 등 녹여내 작성해보세요.</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                    <div class="control">
+                        <textarea class="textarea" id="paperText2" name="paper2"></textarea>
+                        <div class="textCount" id="paperCount2"><span>0</span>/250</div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">학업 수행 또는 실무 현장에서 팀원 간 의견이 충돌된 경험이 있다면 해결 과정 및 결과를 작성해주세요. (250자 이상)<em>*</em>
+                        <div class="paper">
+                            <h5>
+                                >> 작성 내용이 고민된다면 아래 가이드를 참고하세요!
+                                <a href="javascript:;" class="toggle">▼ 내용보기</a>
+                            </h5>
+                            <div class="scroll_wrap">
+                                <div class="scrollBox">
+                                    <h5>-  조별 과제, 팀프로젝트, 대회 출전 경험 등, 팀 내 갈등 해결 경험을 작성해보세요.</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                    <div class="control">
+                        <textarea class="textarea" id="paperText3" name="paper3"></textarea>
+                        <div class="textCount" id="paperCount3"><span>0</span>/250</div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">해당 과정을 알게된 경로를 선택해주세요. (복수선택 가능) <em>*</em></label>
+                    <div class="control">
+                        <label><input class="" type="checkbox" name="route" /><span>구글 검색</span></label>
+                        <label><input class="" type="checkbox" name="route" /><span>네이버 검색</span></label>
+                        <label><input class="" type="checkbox" name="route" /><span>페이스북 광고</span></label>
+                        <label><input class="" type="checkbox" name="route" /><span>인스타그램 광고</span></label>
+                        <label><input class="" type="checkbox" name="route" /><span>구글/유튜브 광고</span></label>
+                        <label><input class="" type="checkbox" name="route" /><span>HRD-Net </span></label>
+                        <label><input class="" type="checkbox" name="route" /><span>학교 사이트/리플렛</span></label>
+                        <label><input class="" type="checkbox" name="route" /><span>부트텐트</span></label>
+                        <label><input class="" type="checkbox" name="route" /><span>링커리어</span></label>
+                        <label><input class="" type="checkbox" name="route" /><span>씽유</span></label>
+                        <label><input class="" type="checkbox" name="route" /><span>네이버 취업 카페</span></label>
+                        <label><input class="" type="checkbox" name="route" /><span>요즘것들</span></label>
+                        <label><input class="" type="checkbox" name="route" /><span>올콘/씽굿/이벤터스/슈퍼루키/생각나눔소/스펙토리</span></label>
+                        <label><input class="" type="checkbox" name="route" /><span>지인소개</span>
+                            <input class="label_input" type="text" name="route_text"/></label>
+                        <label><input class="" type="checkbox" name="route" /><span>기타</span>
+                            <input class="label_input" type="text" name="route_text"/></label>
+                    </div>
+                </div>
+                <div class="agree">
+                    <h4>
+                        개인정보 수집 및 이용 동의
+                        <a href="javascript:;" class="toggle">▼ 내용보기</a>
+                    </h4>
+                    <div class="scroll_wrap">
+                        <div class="scrollBox">
+                            <p>
+                                당사는 귀하의 개인정보보호를 매우
+                                중요시하며,『개인정보보호법』상의 개인정보보호 규정을
+                                준수하고 있습니다.
+                            </p>
+                            <h5>1. 개인정보의 수집•이용 목적</h5>
+                            <ul>
+                                <li>- 홈페이지 내 무료상담신청 메뉴를 통한 수집</li>
+                                <li>- 맞춤식 종합 교육서비스의 제공</li>
+                            </ul>
+                            <h5>2. 수집•이용하는 개인정보 항목</h5>
+                            <ul>
+                                <li>- 필수항목 : 이름(자녀이름), 연령, 전화번호</li>
+                                <li>- 선택항목 : 주소, 상담내용</li>
+                            </ul>
+                            <h5>3. 개인정보의 보유 및 이용기간</h5>
+                            <p>
+                                회사는 개인정보의 수집 및 이용 목적을 달성할 때까지 고객이
+                                제공한 모든 개인 정보를 보유 및 이용하게 되며 고객이
+                                이용동의를 철회하는 경우에는 고객의 개인 정보를 재생
+                                불가능한 방법으로 지체 없이 저장 장치에서 삭제하여 어떠한
+                                방법으로도 열람 또는 이용할 수 없도록 만듭니다.<br />다만,
+                                관계법령에서 일정한 보관기간을 정한 경우는 예외로 합니다. 이
+                                경우 회사는 보관하는 정보를 그 보관의 목적으로만 이용하며
+                                보존기간은 아래와 같습니다.
+                            </p>
+                            <ul>
+                                <li>- 소비자의 불만 또는 분쟁처리에 관한 기록 : 3년</li>
+                                <li>- 방문에 관한 기록 : 3개월</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="agree_check">
+                    <input class="sign_list_chek" type="checkbox" id="sign_chek" />
+                    <label class="sign_list_chek" for="sign_chek"
+                    >개인정보 수집 및 이용에 동의합니다.<em> (필수)</em></label
+                    >
+                </div>
+                <div class="text_center">
+                    <button
+                            type="submit"
+                            class="agree_button"
+                            onclick="return agree(this)"
+                    >
+                        지원서 신청
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>
+
+<th:block th:replace="include/footer :: footer" ></th:block>
+</body>
+</html>
