@@ -28,7 +28,7 @@ public class SubjectController {
     public String applyList(Model model) throws Exception{
         List<SubjectDTO> subDTOList = subFullStackService.findAll();
         model.addAttribute("subDTOList", subDTOList);
-        return "sub/list";
+        return "/sub/list";
     }
 
     //등록
@@ -36,7 +36,7 @@ public class SubjectController {
     public String applyRegister(Model model, Course course, SubjectDTO subDTO)throws Exception{
         subDTO.setCourse(course);
         subFullStackService.register(subDTO);
-        return "main/sign/subSign";
+        return "main/sign/complete_apply";
     }
 
     //상태변경

@@ -4,7 +4,6 @@
   xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
   <body>
     <th:block th:fragment="header">
-
       <nav id="navbar" class="navbar main-nav">
         <div class="container back_white">
           <div class="navbar-brand ml-0">
@@ -18,6 +17,55 @@
               <img th:src="@{/picture/common/chunjaebooklogo.png}" alt="천재교과서 logo">
             </a>
           </div>
+          <script>
+          // navibar burger
+          $(document).ready(function () {
+            sw = true
+            $("#buger_btn").click(function () {
+              if(sw == true) {
+              $(".burger").css("display", "block");
+              sw = false
+              } else {
+              $(".burger").css("display", "none");
+              sw = true
+              }
+            });
+          });
+          </script>
+          <button type="button" class="buger_btn" id="buger_btn">三</button>
+
+            <div class="burger">
+              <div class="bugger_wrap">
+                <a class="navbar-link is-arrowless" th:href="@{/}">홈</a>
+              </div>
+              <div class="bugger_wrap">
+                <a class="navbar-link is-arrowless" th:href="@{/data}"
+                >AI·데이터 과정</a
+                >
+              </div>
+
+              <div class="bugger_wrap">
+                <a class="navbar-link is-arrowless" th:href="@{/java}"
+                >풀스택 과정</a
+                >
+              </div>
+
+              <div class="bugger_wrap">
+                <a class="navbar-link is-arrowless" th:href="@{/pm}"
+                >PM 과정</a
+                >
+              </div>
+              <div class="bugger_wrap">
+                <a class="navbar-link is-arrowless" href="#">천재IT Blog</a>
+              </div>
+              <th:block sec:authorize="isAnonymous()">
+                <div class="bugger_wrap">
+                  <a th:href="@{/member/login}" class="navbar-link is-arrowless">로그인</a>
+                </div>
+              </th:block>
+            </div>
+
+
 
           <div class="navbar-menu mr-0" id="navigation">
             <ul class="navbar-end">

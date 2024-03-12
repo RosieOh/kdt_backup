@@ -28,25 +28,25 @@
     </section>
 
     <section id="pricing" class="pricing" style="padding-top: 100px;">
-        <div class="container back_white" data-aos="fade-up" style="width: 50%; margin: 0 auto; padding-top: 100px; min-height: 70vh;">
+        <div class="container back_white" data-aos="fade-up" style="width: 70%; margin: 0 auto; padding-top: 100px; min-height: 70vh;">
             <div class="col-lg-12" data-aos="fade-up" data-aos-delay="200">
                 <div class="pricing-item featured" style="padding:0;">
                     <form th:action="@{/notice/modify/{id}(id=${boardDTO.id})}" method="post">
-                    <div class="col-12" >
+                        <div class="col-12" >
                             <div class="card w-100">
                                 <div class="card-body">
                                     <div class="table-responsive project-list">
                                         <table class="table project-table table-centered table-nowrap" style="border: none;">
                                             <tbody>
                                             <tr>
-                                                <td style="border: none;">
-                                                    <input class="input" id="title" type="text" th:field="*{boardDTO.title}" required placeholder="제목">
-                                                </td>
+                                                <!--                                                <td style="border: none;">-->
+                                                <!--                                                    <input class="input" id="title" type="text" th:field="*{boardDTO.title}" required placeholder="제목">-->
+                                                <!--                                                </td>-->
                                             </tr>
                                             <tr>
                                                 <td style="border: none;">
                                                     <div id="editor">
-                                                        <textarea class="input" id="content" type="text" th:utext="${boardDTO.content}" required th:name="content" placeholder="내용"></textarea>
+                                                        <textarea class="input"  style="width: 1320px; height: 500px;" id="content" type="text" th:utext="${boardDTO.content}" required th:name="content" placeholder="내용"></textarea>
                                                     </div>
                                                     <script th:inline="javascript">
                                                         const Editor = toastui.Editor;
@@ -79,14 +79,21 @@
                                                 </select>
                                             </div>
                                             <div class="input-group mb-3">
-                                                <span class="input-group-text">작성자</span>
+                                                <span class="input-group-text">작성자 | </span>
                                                 <input type="text" class="form-control"  th:value="${boardDTO.writer}" readonly>
                                             </div>
 
                                             <div class="input-group mb-3">
-                                                <span class="input-group-text">첨부파일</span>
+                                                <span class="input-group-text">첨부파일 | </span>
                                                 <input type="file" class="form-control" name="file">
                                             </div>
+
+                                            <div class="input-group mb-3">
+                                                <span class="input-group-text">제목 | </span>
+                                                <input type="text" style="width: 500px; height: 40px;" class="form-control" th:field="*{boardDTO.title}">
+                                            </div>
+
+                                            <hr/>
 
 
                                             <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

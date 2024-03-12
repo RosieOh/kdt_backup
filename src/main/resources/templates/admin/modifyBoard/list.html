@@ -55,7 +55,7 @@
     </nav>
 </section>
 <div class="row mt-3">
-    <form th:action="@{/templates/admin/modifyBoard/list}" method="get" class="col-md-8 offset-md-2">
+    <form th:action="@{/modifyBoard/list}" method="get" class="col-md-8 offset-md-2">
     </form>
 </div>
 
@@ -73,8 +73,8 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr th:each="board : ${boardList}" style="text-align: center;">
-                        <td th:text="${board.id}"></td>
+                    <tr th:each="board, num : ${boardList}" style="text-align: center;">
+                        <td th:text="${num.count}"></td>
                         <td style="justify-content: center"><a th:href="|@{/modifyBoard/read(id=${board.id})}|" class="text-decoration-none">[[${board.title}]]</a></td>
                         <td th:text="${board.writer}"></td>
                         <td th:text="${#temporals.format(board.regDate, 'yyyy-MM-dd')}"></td>

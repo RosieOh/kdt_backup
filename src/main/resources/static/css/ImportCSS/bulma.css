@@ -88,7 +88,7 @@ p {
   font-weight: 700;
 }
 .card {
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
   margin-bottom: 2rem;
 }
 .intro {
@@ -323,11 +323,33 @@ p {
 }
 
 .bottom_banner {
-  position: fixed;
+  position: sticky;
   bottom: 0;
+  justify-content: center;
+  display: flex;
   width: 100vw;
-  height: 5vh;
-  background-color: var(--c-back_gray);
+  height: 8vh;
+  background-color: var(--c-back_lightgray);
+}
+
+.bottom_banner_wrap{
+  width: 100%;
+  max-width: 1344px;
+  display: flex;
+  justify-content: space-between;
+}
+.bottom_banner_text {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+.bottom_banner_btn {
+  display: flex;
+  align-items: center;
+}
+.bottom_btn {
+  padding: 1.5rem;
 }
 
 .ban_wrap {
@@ -441,5 +463,41 @@ p {
 
 .navbar-link:hover {
   color: var(--c-main);
-  font-weight: bold;
+  font-weight: 800;
+}
+.navbar-link {
+  padding: 0.5rem 1rem;
+}
+
+.buger_btn {
+  display: none;
+  width: 55px;
+  height: 50px;
+  background-color: var(--c-back_lightgray);
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.burger{
+  display: none;
+  width: 100vw;
+  position: relative;
+  height: auto;
+
+}
+
+.bugger_wrap {
+  width: 100%;
+  position: relative;
+  height: 80px;
+
+}
+
+@media screen and (max-width: 1024px), print {
+  .buger_btn {
+    display: block;
+  }
 }

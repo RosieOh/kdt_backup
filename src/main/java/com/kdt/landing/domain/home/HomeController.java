@@ -1,3 +1,4 @@
+
 package com.kdt.landing.domain.home;
 
 import com.kdt.landing.domain.member.repository.MemberRepository;
@@ -30,6 +31,7 @@ public class HomeController {
     public String subSign(Model model) {
         return "main/sign/subSign";
     }
+
 
     @GetMapping("/java")
     public String fullStack(Model model) {

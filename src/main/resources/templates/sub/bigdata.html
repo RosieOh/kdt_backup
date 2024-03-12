@@ -19,13 +19,15 @@
       <section class="container">
 
         <!-- 상단배너 start -->
-        <section class="banner" id="banner">
+        <section class="banner bigbanner" id="banner">
           <div class="banner_box">
             <h4 class="font_white">2024 커리큘럼 전면 리뉴얼!</h4>
             <h1 class="banner_title title_white_big" >Learn by Doing Project <br>
               에듀테크 AI·데이터 개발자 과정 8기 모집</h1>
             <div class="banner_btn">
-              <a th:href="@{subSign}" class="course_button">접수하기>></a>
+              <button class="button">
+                접수하기 &nbsp;&nbsp;>
+              </button>
             </div>
         </div>
         </section>
@@ -41,7 +43,7 @@
                   <p class="subtitleCard font_white">
                     <b>모집</b>
                     <br />
-                    2023.03.05 ~ 2024.04.19
+                    2023.03.13 ~ 2024.04.19
                     <br />
                     <br />
                     <b>합격자 발표</b>
@@ -163,7 +165,7 @@
                 </div>
                 <div class="ml-3 in_box">
                   <ul>
-                    <li class="iconIntro">Java 풀스택 개발자 과정</li>
+                    <li class="iconIntro">AI 데이터 개발자 교육과정</li>
                   </ul>
                 </div>
               </div>
@@ -177,7 +179,7 @@
                 <div class="ml-3 in_box">
                   <ul>
                     <li class="iconIntro">
-                      2024.04.24 ~ 2024.10.28
+                      2024.04.23 ~ 2024.10.29
                       <br />
                       09:00 ~ 18:00 (총 960시간)
                     </li><br />
@@ -245,8 +247,150 @@
           </div>
         </section>
         <!-- 모집 안내 end -->
+        <!-- BENEFITS start  -->
+        <section class="container container_bottom">
+          <div class="hero-body">
+            <div class="container has-text-centered">
+              <h4 class="small_title">BENEFITS</h4>
+              <h1 class="title_white_big title_sub_1">
+                AI 빅데이터 전문가 준비가 처음이세요?<img
+                      th:src="@{/ico/benefit_0.png}"
+                      alt="ico benefit_0"
+              />
+              </h1>
 
-        <th:block th:replace="sub/sub_inclulde/benefit :: benefit"></th:block>
+              <h4 class="font_white title_sub_1">
+                떠먹여주는 <b>갓생취업루틴!</b><br />
+                교육에만 몰입하세요!
+              </h4>
+            </div>
+          </div>
+          <div class="columns is-multiline">
+            <div class="column is-one-third multiline_box_1">
+              <article class="back_black notification border_gray">
+                <div class="media-content">
+                  <div class="">
+                    <h1 class="font_white benefit_title">0원</h1>
+                    <br />
+                    <p class="benefit_sub font_white">
+                      전액 국비지원으로 교육비 0원, <br />
+                      PC 및 교재 지원
+                    </p>
+                  </div>
+                  <div class="index_figure">
+                    <figure class="media-left">
+                      <img th:src="@{/ico/benefit_1.png}" alt="ico benefit_1" />
+                    </figure>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="column is-one-third multiline_box_1">
+              <article class="back_black notification border_gray">
+                <div class="media-content">
+                  <div class="">
+                    <h1 class="font_white benefit_title">2023년 인턴 111명</h1>
+                    <br />
+                    <p class="benefit_sub font_white">
+                      내부 평가 결과에 따른
+                      <br />
+                      인턴 및 직원 전환 기회 제공
+                    </p>
+                  </div>
+                  <div class="index_figure">
+                    <figure class="media-left">
+                      <img th:src="@{/ico/benefit_2.png}" alt="ico benefit_2" />
+                    </figure>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="column is-one-third multiline_box_1">
+              <article class="back_black notification border_gray">
+                <div class="media-content">
+                  <div class="">
+                    <h1 class="font_white benefit_title">오프라인 몰입도 100%</h1>
+                    <br />
+                    <p class="benefit_sub font_white">
+                      09:00 ~ 21:00 무료 개방되는
+                      <br />
+                      교육시설에서 오프라인 교육으로 완전 몰입
+                    </p>
+                  </div>
+                  <div class="index_figure">
+                    <figure class="media-left">
+                      <img th:src="@{/ico/benefit_3.png}" alt="ico benefit_3" />
+                    </figure>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="column is-one-third multiline_box_1">
+              <article class="back_black notification border_gray">
+                <div class="media-content">
+                  <div class="">
+                    <h1 class="font_white benefit_title">현직자의 현장강의</h1>
+                    <br />
+                    <p class="benefit_sub font_white">
+                      현직 실무자의 현장강의로
+                      <br />
+                      실무에 필요한 내용만 전략적으로 학습
+                    </p>
+                  </div>
+                  <div class="index_figure">
+                    <figure class="media-left">
+                      <img th:src="@{/ico/benefit_4.png}" alt="ico benefit_4" />
+                    </figure>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="column is-one-third multiline_box_1">
+              <article class="back_black notification border_gray">
+                <div class="media-content">
+                  <div class="">
+                    <h1 class="font_white benefit_title">나를 위한 6개월</h1>
+                    <br />
+                    <p class="benefit_sub font_white">
+                      3개월, 4개월만에
+                      <br />
+                      현업 투입 가능한 AI 빅데이터 전문가가 된다?
+                      <br />
+                      진짜 AI 빅데이터 전문가가 되기 위한 충분한 투자
+                    </p>
+                  </div>
+                  <div class="index_figure">
+                    <figure class="media-left">
+                      <img th:src="@{/ico/benefit_5.png}" alt="ico benefit_5" />
+                    </figure>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="column is-one-third multiline_box_1">
+              <article class="back_black notification border_gray">
+                <div class="media-content">
+                  <div class="">
+                    <h1 class="font_white benefit_title">실무 프로젝트 5개</h1>
+                    <br />
+                    <p class="benefit_sub font_white">
+                      에듀테크 서비스와 관련된 약 4개의 미니 프로젝트와
+                      <br />
+                      종합프로젝트로 총 5개의 프로젝트 진행!
+                    </p>
+                  </div>
+                  <div class="index_figure">
+                    <figure class="media-left">
+                      <img th:src="@{/ico/benefit_6.png}" alt="ico benefit_6" />
+                    </figure>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+        <!-- BENEFITS end  -->
+
 
 
         <!-- 커리큘럼 start -->
@@ -256,7 +400,7 @@
               <h4 class="small_title_2">CURRICULUM</h4>
                 <h1 class="title_white_big">  2024년 신규 커리큘럼</h1>
                 <p class="subtitle_white text_center"> 프로젝트 기반 AI·데이터 과정 커리큘럼 <br />
-                  7기 과정에서 습득하게 될 스킬들!
+                  8기 과정에서 습득하게 될 스킬들!
                 </p>
               </div>
             </div>
@@ -282,7 +426,7 @@
                   <img th:src="@{/picture/bigdata/skill/big_skill_3.png}" alt="big_skill 이미지3" class="radius2 curri_img mr_05"/>
               </div>
               <div class="curri_img_box">
-                  <img th:src="@{/picture/bigdata/skill/big_skill_4.png}" alt="big_skill 이미지4" class="radius2 curri_img mr_05"/>
+                  <img th:src="@{/picture/bigdata/skill/big_skill_4.png}" alt="big_skill 이미지4" class="radius2 curri_img_2 mr_05"/>
               </div>
               <div class="curri_img_box">
                   <img th:src="@{/picture/bigdata/skill/big_skill_5.png}" alt="big_skill 이미지5" class="radius2 curri_img mr_05"/>
@@ -315,7 +459,7 @@
                   <img th:src="@{/picture/bigdata/skill/big_skill_14.png}" alt="big_skill 이미지14" class="radius2 curri_img mr_05"/>
               </div>
               <div class="curri_img_box">
-                  <img th:src="@{/picture/bigdata/skill/big_skill_15.png}" alt="big_skill 이미지15" class="radius2 curri_img mr_05"/>
+                  <img th:src="@{/picture/bigdata/skill/big_skill_15.jpg}" alt="big_skill 이미지15" class="radius2 curri_img mr_05"/>
               </div>
               <div class="curri_img_box">
                   <img th:src="@{/picture/bigdata/skill/big_skill_16.png}" alt="big_skill 이미지16" class="radius2 curri_img mr_05"/>
@@ -350,7 +494,7 @@
               <div class="curri_content">
                 <p class="dt_btn_2">5, 6개월차</p>
                 <div class="curri_sub_text">
-                <p>프로젝트 최종 개발 및 결과보고 / 천재그룹 인턴 지원 및 발령 / 인턴기간 3개월</p>
+                <p>프로젝트 최종 개발 및 결과보고</p>
               </div>
               </div>
           </div>
@@ -362,11 +506,11 @@
           <div class="hero-body">
             <div class="container has-text-centered">
               <h4 class="small_title">PORTFOLIO</h4>
-              <h1 class="title_white_big title_sub_1">실무 관련 프로젝트 하고, <br> 현업에 빠르게 적응하세요</h1>
+              <h1 class="title_white_big title_sub_1">실무 관련 프로젝트 하고, <br>현업에 빠르게 적응하세요</h1>
             </div>
           </div>
           <div class="port_box">
-            <div class="is-multiline display_block">
+            <div class="is-multiline display_block " style="max-width: 50%">
               <ul class="font_white">
                 <li class="talent_subtitle_4"><div class="index_figure_5">
                   <img th:src="@{/ico/ico-portfolio.png}" alt="포트폴리오 이미지" class="curri_ico"/>
@@ -375,15 +519,14 @@
               </ul>
               <div class="column">
                 <div class="category">
-                  <h1 class="title is-5 btn text_center">
+                  <h1 class="title is-5 btn2 text_center">
                     한자 낱글자 인식 OCR
                   </h1>
                   <ul class="font_white">
                     <li><div class="index_figure_5">
                       <img th:src="@{/ico/ico-checkbox.png}" alt="체크박스 이미지" class="curri_ico"/>
                   </div>
-                      초등학교 한자 공부 능률 향상을 위한 한자 인식 모델 개발
-                      목표
+                      초등학교 한자 공부 능률 향상을 위한 한자 인식 모델 개발 목표
                     </li>
                     <li><div class="index_figure_5">
                       <img th:src="@{/ico/ico-checkbox.png}" alt="체크박스 이미지" class="curri_ico"/>
@@ -403,19 +546,19 @@
                 <div class="flex_between">
                   <article class="columns is-multiline">
                     <div class="column is-12 post-img">
-                      <img th:src="@{/picture/pm/pmport_9.png}" alt="pm 포트폴리오3"/>
+                      <img th:src="@{/picture/bigdata/bigport_1.png}" alt="bigdata 포트폴리오3"/>
                     </div>
                   </article>
                   <article class="columns is-multiline">
                     <div class="column is-12 post-img">
-                      <img th:src="@{/picture/pm/pmport_9.png}" alt="pm 포트폴리오3"/>
+                      <img th:src="@{/picture/bigdata/bigport_2.png}" alt="bigdata 포트폴리오3"/>
 
                     </div>
                   </article>
                 </div>
                 <article class="columns is-multiline">
                   <div class="column is-12 post-img">
-                    <img th:src="@{/picture/pm/pmport_9.png}" alt="pm 포트폴리오3"/>
+                    <img th:src="@{/picture/bigdata/bigport_3.png}" alt="bigdata 포트폴리오3"/>
 
                   </div>
                 </article>
@@ -437,14 +580,14 @@
                     <li><div class="index_figure_5">
                       <img th:src="@{/ico/ico-checkbox.png}" alt="체크박스 이미지" class="curri_ico"/>
                   </div>
-                      Why Isn't My Custom Profile Data Showing on My Tickets?
+                      인기 / 비인기를 구분짓는 언어적인 특징을 도출
                     </li>
                     <li><div class="index_figure_5">
                       <img th:src="@{/ico/ico-checkbox.png}" alt="체크박스 이미지" class="curri_ico"/>
-                  </div>Why Won't My Gmail SMTP Settings Work?</li>
+                  </div>다양한 자연서 분석 도구를 활용하여 인기와 언어적 특성의 상관관계를 심층적으로 분석</li>
                     <li><div class="index_figure_5">
                       <img th:src="@{/ico/ico-checkbox.png}" alt="체크박스 이미지" class="curri_ico"/>
-                  </div>Is There a Customer Portal My Users Can Log in To?</li>
+                  </div>데이터 기반 분석 결과를 바탕으로 교육 콘텐츠 제작 가이드 라인 제안</li>
                   </ul>
                 </div>
               </div>
@@ -452,21 +595,18 @@
                 <div class="flex_between">
                   <article class="columns is-multiline">
                     <div class="column is-12 post-img">
-                      <img th:src="@{/picture/pm/pmport_9.png}" alt="pm 포트폴리오3"/>
-
+                      <img th:src="@{/picture/bigdata/bigport_4.png}" alt="pm 포트폴리오3"/>
                     </div>
                   </article>
                   <article class="columns is-multiline">
                     <div class="column is-12 post-img">
-                      <img th:src="@{/picture/pm/pmport_9.png}" alt="pm 포트폴리오3"/>
-
+                      <img th:src="@{/picture/bigdata/bigport_5.png}" alt="pm 포트폴리오3"/>
                     </div>
                   </article>
                 </div>
                 <article class="columns is-multiline">
                   <div class="column is-12 post-img">
-                    <img th:src="@{/picture/pm/pmport_9.png}" alt="pm 포트폴리오3"/>
-
+                    <img th:src="@{/picture/bigdata/bigport_6.png}" alt="pm 포트폴리오3"/>
                   </div>
                 </article>
               </div>
@@ -475,24 +615,6 @@
         </section>
         <!-- 포트폴리오 end -->
         <th:block th:replace="sub/sub_inclulde/mentoring :: mentoring"></th:block>
-
-      </section>
-      <!-- 육각형 start -->
-      <div class="container_reverse2 back_lightgray">
-        <section class="container_reverse2 container_bottom back_lightgray">
-          <div class="hero-body">
-            <div class="container_reverse2 has-text-centered back_lightgray">
-              <h1 class="title_big">6개월 뒤 꽉찬 6각형 주니어로 성장하기!</h1>
-              </p>
-            </div>
-          </div>
-          <div class="six_box">
-            <img th:src="@{/picture/bigdata/six.png}" alt="육각형 이미지" class="radius2"/>
-          </div>
-        </section>
-      </div>
-      <!-- 육각형 end -->
-      <section class="container">
 
   <!-- 취업 분야는 start -->
   <section class="container container_bottom">
@@ -539,6 +661,23 @@
   </div>
 </section>
 <!-- 취업 분야는 end -->
+
+      </section>
+      <!-- 육각형 start -->
+      <div class="container_reverse2 back_lightgray">
+        <section class="container_reverse2 container_bottom back_lightgray">
+          <div class="hero-body">
+            <div class="container_reverse2 has-text-centered back_lightgray">
+              <h1 class="title_big">6개월 뒤 꽉찬 6각형 주니어로 성장하기!</h1>
+            </div>
+          </div>
+          <div class="six_box">
+            <img th:src="@{/picture/bigdata/six.png}" alt="육각형 이미지" class="radius2"/>
+          </div>
+        </section>
+      </div>
+      <!-- 육각형 end -->
+      <section class="container">
 
         <th:block th:replace="sub/sub_inclulde/procedure :: procedure"></th:block>
 

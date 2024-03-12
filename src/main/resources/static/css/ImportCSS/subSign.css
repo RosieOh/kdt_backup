@@ -73,20 +73,8 @@
   margin: 0 0 0.5rem 0.2rem;
 }
 
-.agree {
-  border: 1px solid var(--c-back_lightgray);
-  color: var(--c-black);
-  display: inline-block;
-  background-color: var(--c-white);
-  padding: 1rem;
-  border-radius: 20px;
-  margin-top: 2.5rem;
-  width: 100%;
-}
 
-.agree:hover {
-  cursor: pointer;
-}
+
 
 .paper {
   border: none;
@@ -115,26 +103,7 @@
   font-weight: bold;
 }
 
-.agree a {
-  color: var(--c-black);
-  background-color: transparent;
-  font-size: 16px;
-  float: right;
-}
 
-.agree p {
-  color: var(--c-black);
-}
-
-.scroll_wrap {
-  display: none;
-  margin: 0.5rem 0 0 1rem;
-}
-
-.scrollBox {
-  overflow-y: scroll;
-  height: 90px;
-}
 
 .subSign_form.field {
   margin-top: 5rem;
@@ -153,7 +122,7 @@ label {
 }
 .subSign_form label p {
   font-size: 13px;
-  color: gray;
+  color: var(--c-back_gray);
 }
 
 [type="radio"] + span {

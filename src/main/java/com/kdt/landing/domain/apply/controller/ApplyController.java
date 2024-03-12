@@ -45,7 +45,7 @@ public class ApplyController {
     public String applyRegister(Model model, ApplyDTO applyDTO, Course course, HttpServletRequest request) throws Exception{
         applyDTO.setCourse(course);
         applyService.register(applyDTO);
-        return "redirect:/";
+        return "/main/sign/complete_apply";
     }
 
     //상태변경

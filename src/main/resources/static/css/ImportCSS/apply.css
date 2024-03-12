@@ -18,6 +18,7 @@
   left: 50%;
   top: 30%;
   transform: translate(-50%, -50%);
+  background-image: url(/static/images/picture/common/complete.jpg);
   background-color: #31c97b;
   background-size: cover;
   font-weight: bold;
@@ -33,4 +34,15 @@
   transform: translate(-50%, -50%);
   font-size: 24px;
   font-weight: bold;
+}
+.complete_home {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, -50%);
+  background-color: lightgray;
+  color: black;
+  font-weight: bold;
+  font-size: 1.25rem;
+  width: 80%;
 }

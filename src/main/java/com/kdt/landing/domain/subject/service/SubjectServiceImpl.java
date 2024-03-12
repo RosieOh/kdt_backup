@@ -47,8 +47,8 @@ public class SubjectServiceImpl implements SubjectService {
 
     @Override
     public void register(SubjectDTO subFullStackDTO) throws Exception {
-        String emailEn = passwordEncoder.encode(subFullStackDTO.getEmail());
-        String telEn = passwordEncoder.encode(subFullStackDTO.getTel());
+        String emailEn = subFullStackDTO.getEmail();
+        String telEn = subFullStackDTO.getTel();
         subFullStackDTO.setEmail(emailEn);
         subFullStackDTO.setTel(telEn);
         Subject subFullStack = modelMapper.map(subFullStackDTO, Subject.class);

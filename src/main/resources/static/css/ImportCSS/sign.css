@@ -67,7 +67,7 @@
 }
 
 .sign_form em {
-  color: var(--c-check);
+  color: var(--c-main);
   font-weight: bold;
   font-style: normal;
   margin-left: 3px;
@@ -91,7 +91,7 @@
 }
 
 .agree {
-  border: 1px solid var(--c-card_back);
+  border: 1px solid var(--c-back_gray);
   color: var(--c-black);
   display: inline-block;
   background-color: var(--c-white);
@@ -100,10 +100,13 @@
   margin-top: 2.5rem;
   width: 100%;
 }
+.agree:hover {
+  cursor: pointer;
+}
 
 .agree a {
   color: var(--c-black);
-  background-color: none;
+  background-color: transparent;
   font-size: 16px;
   float: right;
 }
@@ -124,7 +127,7 @@
 
 .scrollBox {
   overflow-y: scroll;
-  height: 90px;
+  height: 100px;
 }
 
 .field button {

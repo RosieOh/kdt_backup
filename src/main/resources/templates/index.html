@@ -10,13 +10,13 @@
             name="viewport"
     />
     <title>천재IT교육센터</title>
-    <th:block th:replace="include/head :: head"></th:block>
+    <th:block th:replace="~{include/head :: head}"></th:block>
   </head>
   <body>
-    <th:block th:replace="include/header :: header"></th:block>
+    <th:block th:replace="~{include/header :: header}"></th:block>
     <div class="main2">
       <!-- banner -->
-      <section class="hero is-info is-medium is-bold" id="banner">
+      <section class="hero is-info is-medium is-bold " id="banner">
         <div class="hero-body">
           <div class="container has-text-centered back_none">
             <h4 class="title_1">천재IT교육센터</h4>
@@ -77,7 +77,6 @@
                 </h4>
               </div>
               <a th:href="@{subSign}" class="button width">접수하기</a>
-
             </div>
           </div>
           <div class="column text_center radius border1">
@@ -111,16 +110,16 @@
               에서<br />
               새로운 커리어 전환점을 찾았어요!!
             </h1>
-            <p class="text_center">
+            <h4 class="text_center">
               2023년 <b>수료생 111명 인턴 전환!</b>
               <br />
               천재IT교육센터에서 2024년 새로운 커리어를 준비하세요
-            </p>
+            </h4>
           </div>
         </div>
         <div class="columns features">
-          <div class="column text_center radius border1">
-            <div class="card-image has-text-centered">
+          <div class="column text_center radius border1 index_ex">
+            <div class="">
               <img
                 class="radius2"
                 th:src="@{/picture/common/blog_1.jpg}"
@@ -128,8 +127,8 @@
               />
             </div>
           </div>
-          <div class="column text_center radius border1">
-            <div class="card-image has-text-centered">
+          <div class="column text_center radius border1 index_ex">
+            <div class="">
               <img
                 class="radius2"
                 th:src="@{/picture/common/blog_2.jpg}"
@@ -137,8 +136,8 @@
               />
             </div>
           </div>
-          <div class="column text_center radius border1">
-            <div class="card-image has-text-centered">
+          <div class="column text_center radius border1 index_ex">
+            <div class="">
               <img
                 class="radius2"
                 th:src="@{/picture/common/blog_3.png}"
@@ -156,7 +155,7 @@
             <h4 class="title_1 small_title">BENEFITS</h4>
             <h1 class="title_big title_sub_1">IT직무 취준이 처음이세요?</h1>
             <h4 class="title_sub_1">
-              떠먹여주는 &nbsp;<b>갓생취업루틴!</b>
+              떠먹여주는 <b>갓생취업루틴!</b>
               <br />
               교육에만 몰입하세요!
             </h4>
@@ -312,7 +311,7 @@
                     />
                   </figure>
                   <div class="benefits_sub_in">
-                    2024년 03월 05일 ~ 2024년 04월 19일
+                    2024년 03월 13일 ~ 2024년 04월 19일
                   </div>
                 </div>
               </div>
@@ -368,15 +367,23 @@
           </div>
         </div>
       </section>
-      <script th:inline="javascript">
-        (function(){var w=window;if(w.ChannelIO){return w.console.error("ChannelIO script included twice.");}var ch=function(){ch.c(arguments);};ch.q=[];ch.c=function(args){ch.q.push(args);};w.ChannelIO=ch;function l(){if(w.ChannelIOInitialized){return;}w.ChannelIOInitialized=true;var s=document.createElement("script");s.type="text/javascript";s.async=true;s.src="https://cdn.channel.io/plugin/ch-plugin-web.js";var x=document.getElementsByTagName("script")[0];if(x.parentNode){x.parentNode.insertBefore(s,x);}}if(document.readyState==="complete"){l();}else{w.addEventListener("DOMContentLoaded",l);w.addEventListener("load",l);}})();
 
-        ChannelIO('boot', {
-          "pluginKey": "ebc8aaee-afda-484d-a633-5d8a0dff7fb3"
-        });
-      </script>
+      <section class="container container_bottom back_white">
+        <div id="map" style="width:100%;height:350px;"></div>
+
+        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d188ce21a3ae40704e7cf836dfa200c2"></script>
+        <script>
+          var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+                  mapOption = {
+                    center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+                    level: 3 // 지도의 확대 레벨
+                  };
+
+          // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+          var map = new kakao.maps.Map(mapContainer, mapOption);
+        </script>
     </div>
-    <th:block th:replace="main/sign/sign :: sign"></th:block>
-    <th:block th:replace="include/footer :: footer"></th:block>
+    <th:block th:replace="~{main/sign/sign :: sign}"></th:block>
+    <th:block th:replace="~{include/footer :: footer}"></th:block>
   </body>
 </html>

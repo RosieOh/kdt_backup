@@ -142,11 +142,10 @@ public class ModifyBoardController {
     }
 
     @PostMapping("/modify/{id}")
-    public String modifyBoardEdit(@PathVariable("id") Long id, @ModelAttribute("boardDTO") BoardDTO boardDTO){
+    public String modifyBoardEdit(@PathVariable("id") Long id, BoardDTO boardDTO){
         BoardDTO boardDTO1 = boardService.getBoard(id);
         boardDTO1.setTitle(boardDTO.getTitle());
         boardDTO1.setContent(boardDTO.getContent());
-        boardDTO1.setFileId(boardDTO.getFileId());
         boardService.modify(boardDTO1); // 수정된 boardDTO1을 전달해야 합니다.
         return "redirect:/modifyBoard/read?id="+id;
     }
@@ -156,7 +155,7 @@ public class ModifyBoardController {
         log.info("remove post.. " + id);
         boardService.remove(id);
         redirectAttributes.addFlashAttribute("result", "removed");
-        return "redirect:/admin/modifyBoard/list";
+        return "redirect:/modifyBoard/list";
     }
 
     private void removeFiles(List<String> files) {

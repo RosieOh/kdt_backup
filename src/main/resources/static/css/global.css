@@ -214,6 +214,7 @@
 }
 .mr_05 {
   margin-right: 0.5rem;
+  border-radius: 10px;
 }
 .mt_8 {
   margin-top: 8rem;
@@ -236,3 +237,9 @@
 .text_right {
   text-align: right;
 }
+
+
+.hero.is-info {
+  background-color: black;
+}
+

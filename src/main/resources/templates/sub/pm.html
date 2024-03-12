@@ -17,7 +17,7 @@
     <div class="main">
       <section class="container">
         <!-- 상단배너 start -->
-        <section class="banner" id="banner">
+        <section class="banner pmbanner" id="banner">
           <div class="banner_box">
             <h4 class="font_white">2024 커리큘럼 전면 리뉴얼!</h4>
             <h1 class="banner_title title_white_big">
@@ -25,7 +25,7 @@
               에듀테크 PM 과정 6기 모집
             </h1>
             <div class="banner_btn">
-                <a th:href="@{subSign}" class="course_button">접수하기>></a>
+                <a th:href="@{subSign}" class="course_button">접수하기 ></a>
             </div>
           </div>
         </section>
@@ -41,7 +41,7 @@
                   <p class="subtitleCard font_white">
                     <b>모집</b>
                     <br />
-                    2023.03.05 ~ 2024.04.19
+                    2023.03.13 ~ 2024.04.19
                     <br />
                     <br />
                     <b>합격자 발표</b>
@@ -58,6 +58,7 @@
                     <br />
                     2023.04.24 ~ 2024.10.28
                     <br />
+                    (약 6개월)
                   </p>
                 </article>
               </div>
@@ -107,16 +108,16 @@
             <div class="">
               <h4 class="small_title">REVIEW</h4>
               <h1 class="title_white_big title_sub_1">
-                6개월 전 취준 고민을 했던<br />
-                선배 수료생의 생생한 후기로<br />
-                Java 풀스택 과정 미리보기
+                우수 교육생에서<br />
+                천재교육그룹 직원까지!
               </h1>
               <h4 class="font_white title_sub_1">
-                1기, 2기 수료생 <b>90% 이상 인턴 전환</b><br />
-                <b>후기가 증명하는</b> 천재IT교육센터 풀스택 개발자 과정
+                PM 1기, 2기 <b> 수료생 전원 인턴 100%</b><br />
+                PM 1기 <b>100% 직원 전환 성공!</b><br>
+                이제는 현직자가 되어버린 수료생의 리얼한 리뷰로 PM 과정 미리보기
               </h4>
               <div class="banner_btn">
-                <button class="button">수강후기 보러가기 ></button>
+                <button class="button">수강후기 보러가기></button>
               </div>
             </div>
             <div class="slide slide_wrap">
@@ -261,62 +262,205 @@
         </section>
         <!-- 모집 안내 end -->
 
-        <th:block th:replace="sub/sub_inclulde/benefit :: benefit"></th:block>
-
-        <!-- PM 이런 길 start -->
+        <!-- BENEFITS start  -->
         <section class="container container_bottom">
           <div class="hero-body">
             <div class="container has-text-centered">
-              <h4 class="small_title_2">TALENT</h4>
-              <h1 class="title_white_big">
-                에듀테크 PM은 이런 길로 나아갈 수 있어요
+              <h4 class="small_title">BENEFITS</h4>
+              <h1 class="title_white_big title_sub_1">
+                PM 취업준비가 처음이세요?<img
+                      th:src="@{/ico/benefit_0.png}"
+                      alt="ico benefit_0"
+              />
               </h1>
-              <p class="subtitle_white text_center">
-                천재IT교육센터의 에튜테크 PM에게는 인문학적 감수성이 꼭
-                필요합니다.
-              </p>
+
+              <h4 class="font_white title_sub_1">
+                떠먹여주는 <b>갓생취업루틴!</b><br />
+                교육에만 몰입하세요!
+              </h4>
             </div>
           </div>
-          <div class="columns flex_around">
-            <div class="column post is-6">
-              <article class="columns is-multiline">
-                <div class="column is-12 post-img">
-                  <img
-                    th:src="@{/picture/pm/pmport_9.png}"
-                    alt="pm 포트폴리오3"
-                    class="border_ra_2"
-                  />
-                </div>
-              </article>
-            </div>
-          </div>
-          <br /><br />
           <div class="columns is-multiline">
-            <div class="column post is-6">
-              <article class="columns is-multiline">
-                <div class="column is-12 post-img">
-                  <img
-                    th:src="@{/picture/pm/pmport_9.png}"
-                    alt="pm 포트폴리오3"
-                    class="border_ra_2"
-                  />
+            <div class="column is-one-third multiline_box_1">
+              <article class="back_black notification border_gray">
+                <div class="media-content">
+                  <div class="">
+                    <h1 class="font_white benefit_title">자기부담금 0원</h1>
+                    <br />
+                    <p class="benefit_sub font_white">
+                      전액 국비지원으로 교육비 0원, <br />
+                      PC 및 교재 지원
+                    </p>
+                  </div>
+                  <div class="index_figure">
+                    <figure class="media-left">
+                      <img th:src="@{/ico/benefit_1.png}" alt="ico benefit_1" />
+                    </figure>
+                  </div>
                 </div>
               </article>
             </div>
-            <div class="column post is-6">
-              <article class="columns is-multiline">
-                <div class="column is-12 post-img">
-                  <img
-                    th:src="@{/picture/pm/pmport_9.png}"
-                    alt="pm 포트폴리오3"
-                    class="border_ra_2"
-                  />
+            <div class="column is-one-third multiline_box_1">
+              <article class="back_black notification border_gray">
+                <div class="media-content">
+                  <div class="">
+                    <h1 class="font_white benefit_title">2023년 인턴 111명</h1>
+                    <br />
+                    <p class="benefit_sub font_white">
+                      내부 평가 결과에 따른
+                      <br />
+                      인턴 및 직원 전환 기회 제공
+                    </p>
+                  </div>
+                  <div class="index_figure">
+                    <figure class="media-left">
+                      <img th:src="@{/ico/benefit_2.png}" alt="ico benefit_2" />
+                    </figure>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="column is-one-third multiline_box_1">
+              <article class="back_black notification border_gray">
+                <div class="media-content">
+                  <div class="">
+                    <h1 class="font_white benefit_title">오프라인 몰입도 100%</h1>
+                    <br />
+                    <p class="benefit_sub font_white">
+                      09:00 ~ 21:00 무료 개방되는
+                      <br />
+                      교육시설에서 오프라인 교육으로 완전 몰입
+                    </p>
+                  </div>
+                  <div class="index_figure">
+                    <figure class="media-left">
+                      <img th:src="@{/ico/benefit_3.png}" alt="ico benefit_3" />
+                    </figure>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="column is-one-third multiline_box_1">
+              <article class="back_black notification border_gray">
+                <div class="media-content">
+                  <div class="">
+                    <h1 class="font_white benefit_title">현직자의 현장강의</h1>
+                    <br />
+                    <p class="benefit_sub font_white">
+                      현직 실무자의 현장강의로
+                      <br />
+                      실무에 필요한 내용만 전략적으로 학습
+                    </p>
+                  </div>
+                  <div class="index_figure">
+                    <figure class="media-left">
+                      <img th:src="@{/ico/benefit_4.png}" alt="ico benefit_4" />
+                    </figure>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="column is-one-third multiline_box_1">
+              <article class="back_black notification border_gray">
+                <div class="media-content">
+                  <div class="">
+                    <h1 class="font_white benefit_title">나를 위한 6개월</h1>
+                    <br />
+                    <p class="benefit_sub font_white">
+                      3개월, 4개월만에
+                      <br />
+                      현업 투입 가능한 PM가 된다?
+                      <br />
+                      진짜 PM이 되기 위한 충분한 투자
+                    </p>
+                  </div>
+                  <div class="index_figure">
+                    <figure class="media-left">
+                      <img th:src="@{/ico/benefit_5.png}" alt="ico benefit_5" />
+                    </figure>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="column is-one-third multiline_box_1">
+              <article class="back_black notification border_gray">
+                <div class="media-content">
+                  <div class="">
+                    <h1 class="font_white benefit_title">실무 프로젝트 10개</h1>
+                    <br />
+                    <p class="benefit_sub font_white">
+                      약 10개의 실무 프로젝트로
+                      <br />
+                      6개월 뒤 탄탄해진 포트폴리오
+                    </p>
+                  </div>
+                  <div class="index_figure">
+                    <figure class="media-left">
+                      <img th:src="@{/ico/benefit_6.png}" alt="ico benefit_6" />
+                    </figure>
+                  </div>
                 </div>
               </article>
             </div>
           </div>
         </section>
-        <!-- PM 이런 길 end -->
+        <!-- BENEFITS end  -->
+
+<!--        &lt;!&ndash; PM 이런 길 start &ndash;&gt;-->
+<!--        <section class="container container_bottom">-->
+<!--          <div class="hero-body">-->
+<!--            <div class="container has-text-centered">-->
+<!--              <h4 class="small_title_2">TALENT</h4>-->
+<!--              <h1 class="title_white_big">-->
+<!--                에듀테크 PM은 이런 길로 나아갈 수 있어요-->
+<!--              </h1>-->
+<!--              <p class="subtitle_white text_center">-->
+<!--                천재IT교육센터의 에튜테크 PM에게는 인문학적 감수성이 꼭-->
+<!--                필요합니다.-->
+<!--              </p>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="columns flex_around">-->
+<!--            <div class="column post is-6">-->
+<!--              <article class="columns is-multiline">-->
+<!--                <div class="column is-12 post-img">-->
+<!--                  <img-->
+<!--                    th:src="@{/picture/pm/pmport_9.png}"-->
+<!--                    alt="pm 포트폴리오3"-->
+<!--                    class="border_ra_2"-->
+<!--                  />-->
+<!--                </div>-->
+<!--              </article>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <br /><br />-->
+<!--          <div class="columns is-multiline">-->
+<!--            <div class="column post is-6">-->
+<!--              <article class="columns is-multiline">-->
+<!--                <div class="column is-12 post-img">-->
+<!--                  <img-->
+<!--                    th:src="@{/picture/pm/pmport_9.png}"-->
+<!--                    alt="pm 포트폴리오3"-->
+<!--                    class="border_ra_2"-->
+<!--                  />-->
+<!--                </div>-->
+<!--              </article>-->
+<!--            </div>-->
+<!--            <div class="column post is-6">-->
+<!--              <article class="columns is-multiline">-->
+<!--                <div class="column is-12 post-img">-->
+<!--                  <img-->
+<!--                    th:src="@{/picture/pm/pmport_9.png}"-->
+<!--                    alt="pm 포트폴리오3"-->
+<!--                    class="border_ra_2"-->
+<!--                  />-->
+<!--                </div>-->
+<!--              </article>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </section>-->
+<!--        &lt;!&ndash; PM 이런 길 end &ndash;&gt;-->
+<!--        -->
       </section>
 
       <!-- 자가진단표 start -->

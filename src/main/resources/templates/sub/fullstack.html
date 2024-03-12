@@ -17,7 +17,7 @@
     <div class="main">
       <section class="container">
         <!-- 상단배너 start -->
-        <section class="banner" id="banner">
+        <section class="banner fullbanner" id="banner">
           <div class="banner_box">
             <h4 class="font_white">2024 커리큘럼 전면 리뉴얼!</h4>
             <h1 class="banner_title title_white_big">
@@ -25,7 +25,7 @@
               에듀테크 Java 풀스택 개발자 과정 6기 모집
             </h1>
             <div class="banner_btn">
-              <a th:href="@{subSign}" class="course_button">접수하기>></a>
+              <a th:href="@{subSign}" class="course_button">접수하기 ></a>
             </div>
           </div>
         </section>
@@ -41,7 +41,7 @@
                   <p class="subtitleCard font_white">
                     <b>모집</b>
                     <br />
-                    2023.03.05 ~ 2024.04.19
+                    2023.03.13 ~ 2024.04.19
                     <br />
                     <br />
                     <b>합격자 발표</b>
@@ -296,14 +296,159 @@
           </div>
         </section>
         <!-- 모집 안내 end -->
+        <!-- BENEFITS start  -->
+        <section class="container container_bottom">
+          <div class="hero-body">
+            <div class="container has-text-centered">
+              <h4 class="small_title">BENEFITS</h4>
+              <h1 class="title_white_big title_sub_1">
+                개발자 준비가 처음이세요?<img
+                      th:src="@{/ico/benefit_0.png}"
+                      alt="ico benefit_0"
+              />
+              </h1>
 
-        <th:block th:replace="sub/sub_inclulde/benefit :: benefit"></th:block>
+              <h4 class="font_white title_sub_1">
+                떠먹여주는 <b>갓생취업루틴!</b><br />
+                교육에만 몰입하세요!
+              </h4>
+            </div>
+          </div>
+          <div class="columns is-multiline">
+            <div class="column is-one-third multiline_box_1">
+              <article class="back_black notification border_gray">
+                <div class="media-content">
+                  <div class="">
+                    <h1 class="font_white benefit_title">0원</h1>
+                    <br />
+                    <p class="benefit_sub font_white">
+                      전액 국비지원으로 교육비 0원, <br />
+                      PC 및 교재 지원
+                    </p>
+                  </div>
+                  <div class="index_figure">
+                    <figure class="media-left">
+                      <img th:src="@{/ico/benefit_1.png}" alt="ico benefit_1" />
+                    </figure>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="column is-one-third multiline_box_1">
+              <article class="back_black notification border_gray">
+                <div class="media-content">
+                  <div class="">
+                    <h1 class="font_white benefit_title">2023년 인턴 111명</h1>
+                    <br />
+                    <p class="benefit_sub font_white">
+                      내부 평가 결과에 따른
+                      <br />
+                      인턴 및 직원 전환 기회 제공
+                    </p>
+                  </div>
+                  <div class="index_figure">
+                    <figure class="media-left">
+                      <img th:src="@{/ico/benefit_2.png}" alt="ico benefit_2" />
+                    </figure>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="column is-one-third multiline_box_1">
+              <article class="back_black notification border_gray">
+                <div class="media-content">
+                  <div class="">
+                    <h1 class="font_white benefit_title">시니어급 현업 실무진의 밀착 멘토링</h1>
+                    <br />
+                    <p class="benefit_sub font_white">
+                      그룹내 시니어급 현업 실무진과 종합 프로젝트
+                      <br />
+                      멘토링 진행
+                    </p>
+                  </div>
+                  <div class="index_figure">
+                    <figure class="media-left">
+                      <img th:src="@{/ico/benefit_3.png}" alt="ico benefit_3" />
+                    </figure>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="column is-one-third multiline_box_1">
+              <article class="back_black notification border_gray">
+                <div class="media-content">
+                  <div class="">
+                    <h1 class="font_white benefit_title">현직자의 현장강의</h1>
+                    <br />
+                    <p class="benefit_sub font_white">
+                      현직 실무자의 현장강의로
+                      <br />
+                      실무에 필요한 내용만 전략적으로 학습
+                    </p>
+                  </div>
+                  <div class="index_figure">
+                    <figure class="media-left">
+                      <img th:src="@{/ico/benefit_4.png}" alt="ico benefit_4" />
+                    </figure>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="column is-one-third multiline_box_1">
+              <article class="back_black notification border_gray">
+                <div class="media-content">
+                  <div class="">
+                    <h1 class="font_white benefit_title">개발자 맞춤형 취업 특강</h1>
+                    <br />
+                    <p class="benefit_sub font_white">
+                      현업능력, 문제해결역량 향상을 위한
+                      <br />
+                      특강과 자소서 및 포트폴리오 특강 등
+                      <br />
+                      개발자 맞춤형 취업 대비 지원!
+                    </p>
+                  </div>
+                  <div class="index_figure">
+                    <figure class="media-left">
+                      <img th:src="@{/ico/benefit_5.png}" alt="ico benefit_5" />
+                    </figure>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="column is-one-third multiline_box_1">
+              <article class="back_black notification border_gray">
+                <div class="media-content">
+                  <div class="">
+                    <h1 class="font_white benefit_title">실무 프로젝트 5개</h1>
+                    <br />
+                    <p class="benefit_sub font_white">
+                      에듀테크 서비스와 관련된 약 4개의 미니프로젝트와
+                      <br />
+                      종합프로젝트로 총 5개의 프로젝트 진행!
+                    </p>
+                  </div>
+                  <div class="index_figure">
+                    <figure class="media-left">
+                      <img th:src="@{/ico/benefit_6.png}" alt="ico benefit_6" />
+                    </figure>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+        <!-- BENEFITS end  -->
+
 
         <!-- 커리큘럼 start -->
         <section class="container container_bottom">
           <div class="hero-body">
             <div class="container has-text-centered">
               <h4 class="small_title_2">CURRICULUM</h4>
+              <h4 class="font_white">
+                천재IT교육센터의 인텐시브 러닝시스템
+              </h4>
               <h1 class="title_white_big">POINT 01 커리큘럼</h1>
               <p class="subtitle_white text_center">
                 풀스택 개발자가 되기 위한 <b>6개월간의 코드 디깅!</b><br />
@@ -624,9 +769,6 @@
           th:replace="sub/sub_inclulde/mentoring :: mentoring"
         ></th:block>
 
-        <th:block
-          th:replace="sub/sub_inclulde/procedure :: procedure"
-        ></th:block>
       </section>
       <!-- 예비 개발자 start -->
       <section class="container_reverse">
@@ -701,6 +843,9 @@
       <!-- 예비 개발자 end -->
 
       <section class="container">
+        <th:block
+                th:replace="sub/sub_inclulde/procedure :: procedure"
+        ></th:block>
         <th:block th:replace="sub/sub_inclulde/eduplace :: eduplace"></th:block>
 
         <th:block

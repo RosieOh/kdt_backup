@@ -49,8 +49,8 @@ public class ApplyServiceImpl implements ApplyService{
     // 등록
     @Override
     public void register(ApplyDTO applyDTO) {
-        String emailEn = passwordEncoder.encode(applyDTO.getEmail());
-        String telEn = passwordEncoder.encode(applyDTO.getTel());
+        String emailEn = applyDTO.getEmail();
+        String telEn = applyDTO.getTel();
         applyDTO.setEmail(emailEn);
         applyDTO.setTel(telEn);
         Apply apply = modelMapper.map(applyDTO, Apply.class);
